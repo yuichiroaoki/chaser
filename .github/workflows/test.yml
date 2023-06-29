@@ -1,6 +1,15 @@
 name: test
 
-on: workflow_dispatch
+on:
+  push:
+    branches: [main]
+    paths:
+      - "contracts/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "contracts/**"
+  workflow_dispatch:
 
 env:
   FOUNDRY_PROFILE: ci
@@ -30,5 +39,8 @@ jobs:
 
       - name: Run Forge tests
         run: |
-          forge test -vvv
+          cd contracts
+          forge test -vvv --fork-url https://arb-mainnet.g.alchemy.com/v2/$ALCHEMY_API_KEY --fork-block-number 104254482 --mp test/UniversalRouter.t.sol
         id: test
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
