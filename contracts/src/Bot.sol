@@ -23,8 +23,8 @@ contract Bot is IUniswapV3SwapCallback, UniV3Base, Test {
         (address tokenIn, address tokenOut) = abi.decode(data, (address, address));
         (uint256 amountIn, uint256 amountOut) = deltaToAmount(amount0Delta, amount1Delta);
         uint256 amountOutOnSushi = swapOnSushi(tokenOut, tokenIn, amountOut);
-		console.log("sushi: %s", amountOutOnSushi);
-		console.log("univ3: %s", amountIn);
+        console.log("sushi: %s", amountOutOnSushi);
+        console.log("univ3: %s", amountIn);
         if (amountIn > amountOutOnSushi) {
             revert Fail("Not profitable");
         }
@@ -32,7 +32,7 @@ contract Bot is IUniswapV3SwapCallback, UniV3Base, Test {
     }
 
     function backrunOnUniV3Sushi(address uniV3Pool, address tokenIn, address tokenOut, uint256 amountIn) external {
-		bool zeroForOne = tokenIn < tokenOut;
+        bool zeroForOne = tokenIn < tokenOut;
         IUniswapV3Pool(uniV3Pool).swap(
             address(this), zeroForOne, int256(amountIn), getSqrtPriceLimitX96(zeroForOne), abi.encode(tokenIn, tokenOut)
         );
@@ -43,7 +43,7 @@ contract Bot is IUniswapV3SwapCallback, UniV3Base, Test {
         address[] memory path = new address[](2);
         path[0] = address(tokenIn);
         path[1] = address(tokenOut);
-		IERC20(tokenIn).approve(address(sushiRouter), amountIn);
+        IERC20(tokenIn).approve(address(sushiRouter), amountIn);
         sushiRouter.swapExactTokensForTokensSupportingFeeOnTransferTokens(
             amountIn, 1, path, address(this), block.timestamp
         );
