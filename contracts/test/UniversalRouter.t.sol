@@ -19,6 +19,7 @@ contract UniversalRouterTest is Test {
     address immutable user = 0x36528721ee15c46f2d24Fb6bfc5b580029749c5a;
 
     address univ3WethXirtam10000 = 0xcDb3a8ade333fB408dB9dCF4326C70b1c3229bB5;
+    uint256 immutable totalAmountIn = 83695536733689272452600;
 
     /**
      * trigger tx using UniversalRouter
@@ -62,7 +63,7 @@ contract UniversalRouterTest is Test {
 
     /**
      * backrun #1
-     * WETH - UniV3 ETH/XIRTAM 1% -> XIRTAM
+     * WETH - UniV3 ETH/XIRTAM 0.3% -> XIRTAM
      * XIRTAM - Sushi 0.3% -> WETH
      *
      * Profit: 0.01227623956324444 WETH
@@ -87,7 +88,7 @@ contract UniversalRouterTest is Test {
 
     /**
      * backrun #2
-     * WETH - UniV3 ETH/XIRTAM 0.3% -> XIRTAM
+     * WETH - UniV3 ETH/XIRTAM 1% -> XIRTAM
      * XIRTAM - Sushi 0.3% -> WETH
      *
      * Profit: 0.000425571747640877 WETH
@@ -161,9 +162,8 @@ contract UniversalRouterTest is Test {
      * ETH received: 0.035107906712239745 ETH
      */
     function testSushi() public {
-        uint256 amountIn = 83695536733689272452600;
         // xirtam => ETH on Sushi
-        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountIn);
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), totalAmountIn);
         console.log("ETH received:", amountOut);
 
         // xirtam => ETH on UniV3
@@ -178,11 +178,75 @@ contract UniversalRouterTest is Test {
         bot.backrunOnUniV3Sushi(univ3WethXirtam10000, address(xirtam), address(weth), backrunAmountIn);
     }
 
-    function testSushiAndUniV310000() public {
-        uint256 amountIn = 83695536733689272452600;
-        // xirtam => ETH on Sushi
-        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), 80000000000000000000000);
-        amountOut += swapOnUniV310000(address(xirtam), address(weth), amountIn - 80000000000000000000000);
+    function testSushiAndUni7() public {
+        uint256 amountInOnSushi = totalAmountIn * 7 / 10;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni8() public {
+        uint256 amountInOnSushi = totalAmountIn * 8 / 10;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni9() public {
+        uint256 amountInOnSushi = totalAmountIn * 9 / 10;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni91() public {
+        uint256 amountInOnSushi = totalAmountIn * 91 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni89() public {
+        uint256 amountInOnSushi = totalAmountIn * 89 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni92() public {
+        uint256 amountInOnSushi = totalAmountIn * 92 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni93() public {
+        uint256 amountInOnSushi = totalAmountIn * 93 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni94() public {
+        uint256 amountInOnSushi = totalAmountIn * 94 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
+        console.log("ETH received:", amountOut);
+    }
+
+    function testSushiAndUni95() public {
+        uint256 amountInOnSushi = totalAmountIn * 95 / 100;
+        uint256 amountOut = swapOnSushi(address(xirtam), address(weth), amountInOnSushi);
+        amountOut += swapOnUniV310000(address(xirtam), address(weth), totalAmountIn - amountInOnSushi);
+        console.log("amountInOnSushi:", amountInOnSushi);
         console.log("ETH received:", amountOut);
     }
 }
