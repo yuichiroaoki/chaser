@@ -1,6 +1,7 @@
 use crate::db::univ2::update_pool;
 use ethers::abi::ethabi;
 use ethers::prelude::*;
+use tracing::warn;
 
 pub const UNIV2_SYNC_EVENT_SIG: &str = "Sync(uint112,uint112)";
 pub const UNIV2_SWAP_EVENT_SIG: &str = "Swap(address,uint256,uint256,uint256,uint256,address)";
@@ -72,7 +73,7 @@ pub fn update_with_sync_event(
     let univ2_event = match decode_sync_event(log_data) {
         Ok(event) => event,
         Err(e) => {
-            println!("failed to decode swap event: {:?}", e);
+            warn!("failed to decode swap event: {:?}", e);
             return;
         }
     };
@@ -85,7 +86,7 @@ pub fn update_with_sync_event(
     ) {
         Ok(_) => {}
         Err(e) => {
-            println!("failed to update pool: {:?}", e);
+            warn!("failed to update pool: {:?}", e);
         }
     };
 }
@@ -100,7 +101,7 @@ pub fn update_with_velodrome_sync_event(
     let univ2_event = match decode_velodrome_sync_event(log_data) {
         Ok(event) => event,
         Err(e) => {
-            println!("failed to decode swap event: {:?}", e);
+            warn!("failed to decode swap event: {:?}", e);
             return;
         }
     };
@@ -113,7 +114,7 @@ pub fn update_with_velodrome_sync_event(
     ) {
         Ok(_) => {}
         Err(e) => {
-            println!("failed to update pool: {:?}", e);
+            warn!("failed to update pool: {:?}", e);
         }
     };
 }

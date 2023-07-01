@@ -8,6 +8,7 @@ mod decode;
 mod tick_bitmap;
 mod ticks;
 pub use decode::*;
+use tracing::{instrument, warn};
 use uniswap_v3_math::{liquidity_math, tick_math};
 
 pub struct UniV3SwapEvent {
@@ -39,7 +40,7 @@ pub fn update_with_swap_event(
     let univ3_event = match decode_swap_event(log_data) {
         Ok(event) => event,
         Err(e) => {
-            println!("failed to decode swap event: {:?}", e);
+            warn!("failed to decode swap event: {:?}", e);
             return;
         }
     };
@@ -54,12 +55,12 @@ pub fn update_with_swap_event(
     ) {
         Ok(_) => {}
         Err(e) => {
-            println!("failed to update pool: {:?}", e);
+            warn!("failed to update pool: {:?}", e);
         }
     }
 }
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Debug)]
 struct LiquidityUpdateParams {
     pub pool_address: Address,
     pub tick_lower: i32,
@@ -67,6 +68,7 @@ struct LiquidityUpdateParams {
     pub liquidity_delta: i128,
 }
 
+#[instrument]
 pub async fn update_with_liquidity_event<M: Middleware + 'static>(
     redis_url: &str,
     chain_id: u64,
@@ -85,7 +87,7 @@ pub async fn update_with_liquidity_event<M: Middleware + 'static>(
     let event_data = match event_data {
         Ok(event_data) => event_data,
         Err(e) => {
-            println!("failed to decode liquidity event: {:?}", e);
+            warn!("failed to decode liquidity event: {:?}", e);
             return;
         }
     };
@@ -104,6 +106,7 @@ pub async fn update_with_liquidity_event<M: Middleware + 'static>(
 }
 
 // UniswapV3
+#[instrument]
 async fn modify_position<M: Middleware + 'static>(
     redis_client: &redis::Client,
     chain_id: u64,
@@ -113,7 +116,7 @@ async fn modify_position<M: Middleware + 'static>(
     match check_ticks(params.tick_lower, params.tick_upper) {
         Ok(_) => {}
         Err(e) => {
-            println!("invalid ticks: {:?}", e);
+            warn!("invalid ticks: {:?}", e);
             return;
         }
     }
@@ -123,17 +126,17 @@ async fn modify_position<M: Middleware + 'static>(
             Some(pool_info) => match pool_info {
                 Pool::UniswapV3(pool) => pool,
                 _ => {
-                    println!("pool is not UniswapV3");
+                    warn!("pool is not UniswapV3");
                     return;
                 }
             },
             None => {
-                println!("pool not found");
+                warn!("pool not found");
                 return;
             }
         },
         Err(e) => {
-            println!("{:?}", e);
+            warn!("{:?}", e);
             return;
         }
     };
@@ -149,10 +152,8 @@ async fn modify_position<M: Middleware + 'static>(
     {
         Ok(_) => {}
         Err(e) => {
-            println!("failed to update position: {:?}", e);
-            println!("tick_lower: {:?}", params.tick_lower);
-            println!("tick_upper: {:?}", params.tick_upper);
-            println!("liquidity_delta: {:?}", params.liquidity_delta);
+            warn!("failed to update position: {:?}", e);
+            warn!(params.tick_lower, params.tick_upper, params.liquidity_delta);
         }
     };
     if params.liquidity_delta != 0 {
@@ -171,20 +172,14 @@ async fn modify_position<M: Middleware + 'static>(
                     ) {
                         Ok(_) => {}
                         Err(e) => {
-                            println!("failed to update liquidity: {:?}", e);
+                            warn!("failed to update liquidity: {:?}", e);
                         }
                     };
                 }
                 Err(e) => {
-                    println!("failed to update liquidity: {:?}", e);
-                    println!(
-                        "liquidity: {:?}, liquidity_delta: {:?}",
-                        pool_info.liquidity, params.liquidity_delta
-                    );
-                    println!(
-                        "tick: {:?}, tick_lower: {:?}, tick_upper: {:?}",
-                        pool_info.tick, params.tick_lower, params.tick_upper
-                    );
+                    warn!("failed to update liquidity: {:?}", e);
+                    warn!(pool_info.liquidity, params.liquidity_delta);
+                    warn!(pool_info.tick, params.tick_lower, params.tick_upper);
                 }
             }
         } else {

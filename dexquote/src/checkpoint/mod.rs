@@ -7,9 +7,11 @@ use ethers::{
     types::H160,
 };
 use std::{error::Error, str::FromStr, sync::Arc, time::Instant};
+use tracing::{info, instrument};
 
 use crate::config;
 
+#[instrument]
 pub async fn create_checkpoint(
     config_name: String,
     checkpoint_path: String,
@@ -37,7 +39,7 @@ pub async fn create_checkpoint(
 
     generate_checkpoint_with_throttle(dexes, provider, 100000, 5, &checkpoint_path).await?;
 
-    println!("Created a checkpoint in {:?}", start.elapsed());
+    info!("Created a checkpoint in {:?}", start.elapsed());
 
     Ok(())
 }

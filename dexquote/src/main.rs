@@ -1,6 +1,5 @@
-use std::error::Error;
-
 use clap::{Parser, Subcommand};
+use std::error::Error;
 mod checkpoint;
 mod config;
 mod import;
@@ -56,6 +55,7 @@ enum Commands {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    tracing_subscriber::fmt::init();
     let args = Args::parse();
 
     match args.command {

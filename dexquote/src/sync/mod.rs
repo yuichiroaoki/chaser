@@ -8,6 +8,7 @@ use dexquote::event::univ3::{
 };
 use ethers::prelude::*;
 use std::sync::Arc;
+use tracing::{info, instrument};
 
 use crossbeam_channel::unbounded;
 
@@ -72,13 +73,14 @@ pub async fn update_pool_states(
     }
 }
 
+#[instrument]
 async fn update_pool_state(log: Log, conf: &Config, chain_id: u64) {
     let event_sig = log.topics[0];
     let provider = get_provider(&conf.json_rpc_url).unwrap();
     let middleware = Arc::new(provider);
     match log.transaction_hash {
         Some(tx_hash) => {
-            println!("tx_hash: {:?}", tx_hash);
+            info!("tx_hash: {:?}", tx_hash);
         }
         None => return,
     }

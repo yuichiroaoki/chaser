@@ -5,8 +5,10 @@ use crate::{
     event::utils::before_add_delta,
 };
 use ethers::prelude::*;
+use tracing::{instrument, warn};
 use uniswap_v3_math::liquidity_math;
 
+#[instrument]
 pub async fn update<M: Middleware + 'static>(
     redis_client: &redis::Client,
     chain_id: u64,
@@ -40,7 +42,7 @@ pub async fn update<M: Middleware + 'static>(
                 };
             }
             Err(e) => {
-                println!("{:?}", e);
+                warn!("{:?}", e);
 
                 (liquidity_gross_after, new_liquidity_net, flipped) =
                     get_liquidity_net_gross_flipped_from_provider(
@@ -74,6 +76,7 @@ pub async fn update<M: Middleware + 'static>(
     Ok(flipped)
 }
 
+#[instrument]
 async fn get_liquidity_net_gross_flipped_from_provider<M: Middleware + 'static>(
     pool_address: Address,
     tick: i32,
@@ -96,7 +99,7 @@ pub fn clear(redis_client: &redis::Client, chain_id: u64, pool_address: Address,
     match delete_ticks(redis_client, chain_id, pool_address, tick) {
         Ok(_) => {}
         Err(e) => {
-            println!("{:?}", e);
+            warn!("{:?}", e);
         }
     }
 }
