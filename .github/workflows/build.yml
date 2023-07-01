@@ -1,0 +1,35 @@
+name: Build 
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "dexquote/src/**"
+
+jobs:
+  build:
+    name: Check
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./dexquote
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Build
+        run: | 
+          make build
+
+      - name: Compress binary
+        run: | 
+          cd target/release
+          tar -czvf dexquote.tar.gz dexquote
+
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dexquote
+          path: |
+            target/release/dexquote.tar.gz
+          retention-days: 1

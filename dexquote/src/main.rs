@@ -1,6 +1,7 @@
 use std::error::Error;
 
 use clap::{Parser, Subcommand};
+mod checkpoint;
 mod config;
 mod import;
 
@@ -19,11 +20,20 @@ enum Commands {
         #[clap(short, long, default_value = "default")]
         name: String,
     },
-    /// Import pools
+    /// Create a checkpoint
+    Checkpoint {
+        /// Checkpoint path
+        #[clap(short, long)]
+        path: String,
+        /// Set configuration name
+        #[clap(short, long, default_value = "default")]
+        name: String,
+    },
+    /// Import pools from checkpoint
     Import {
         /// Checkpoint path
         #[clap(short, long)]
-        checkpoint: String,
+        path: String,
         /// Set configuration name
         #[clap(short, long, default_value = "default")]
         name: String,
@@ -39,8 +49,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
             let conf = config::get_config(name);
             println!("{conf:#?}");
         }
-        Commands::Import { name, checkpoint } => {
-            import::import_pool(name, checkpoint).await?;
+        Commands::Checkpoint { name, path } => {
+            checkpoint::create_checkpoint(name, path).await?;
+        }
+        Commands::Import { name, path } => {
+            import::import_pool(name, path).await?;
         }
     }
 
