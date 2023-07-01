@@ -37,10 +37,10 @@ fn hashmap_to_univ2(pool_address: Address, target_data: HashMap<String, String>)
     }))
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) {
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) -> RedisResult<()> {
     let mut con = client.get_connection().unwrap();
     let key = get_pool_key(pool.address, chain_id);
-    let _: () = redis::cmd("HSET")
+    redis::cmd("HSET")
         .arg(key)
         .arg("fee")
         .arg(pool.fee)
@@ -59,7 +59,6 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) {
         .arg("dex")
         .arg("UNIV2")
         .query(&mut con)
-        .unwrap();
 }
 
 pub fn update_pool(

@@ -8,6 +8,7 @@ use crate::config;
 pub async fn import_pool(
     config_name: String,
     checkpoint_path: String,
+    sync: bool,
 ) -> Result<(), Box<dyn Error>> {
     let start = Instant::now();
     let conf = config::get_config(config_name);
@@ -15,12 +16,22 @@ pub async fn import_pool(
 
     let provider = Arc::new(Provider::<Http>::try_from(&conf.json_rpc_url).unwrap());
     let chain_id = provider.get_chainid().await?.as_u64();
-    let (_dexes, pools) =
-        checkpoint::sync_pools_from_checkpoint_with_throttle(&checkpoint_path, 100000, 5, provider)
-            .await?;
+
+    let pools;
+    if sync {
+        (_, pools) = checkpoint::sync_pools_from_checkpoint_with_throttle(
+            &checkpoint_path,
+            100000,
+            5,
+            provider,
+        )
+        .await?;
+    } else {
+        (_, pools, _) = checkpoint::deconstruct_checkpoint(&checkpoint_path);
+    }
     let num_pools = pools.len();
     for pool in pools {
-        add_pool(&redis_client, chain_id, pool);
+        add_pool(&redis_client, chain_id, pool)?;
     }
 
     println!("Imported {} pools in {:?}", num_pools, start.elapsed());

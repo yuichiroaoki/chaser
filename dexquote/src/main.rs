@@ -38,6 +38,9 @@ enum Commands {
         /// Set configuration name
         #[clap(short, long, default_value = "default")]
         name: String,
+        /// Sync pools before import
+        #[clap(short, long, default_value = "false")]
+        sync: bool,
     },
     /// Update pool states
     Sync {
@@ -63,8 +66,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
         Commands::Checkpoint { name, path } => {
             checkpoint::create_checkpoint(name, path).await?;
         }
-        Commands::Import { name, path } => {
-            import::import_pool(name, path).await?;
+        Commands::Import { name, path, sync } => {
+            import::import_pool(name, path, sync).await?;
         }
         Commands::Sync { threads, name } => {
             sync::update_pool_states(threads, name).await?;

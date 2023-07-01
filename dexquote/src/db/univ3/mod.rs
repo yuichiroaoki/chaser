@@ -1,5 +1,5 @@
 use super::{get_pool_hashmap, get_pool_key};
-use crate::utils::address_str;
+use crate::{constants::tick_spacing::get_tick_spacing, utils::address_str};
 use cfmms::pool::{Pool, UniswapV3Pool};
 use ethers::{
     abi::{AbiDecode, AbiEncode},
@@ -71,13 +71,19 @@ fn hashmap_to_univ3(pool_address: Address, target_data: HashMap<String, String>)
     }))
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) {
-    let mut con = client.get_connection().unwrap();
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) -> RedisResult<()> {
+    let mut con = client.get_connection()?;
     let key = get_pool_key(pool.address, chain_id);
-    let _: () = redis::cmd("HSET")
+    let mut tick_spacing = pool.tick_spacing;
+    let fee = pool.fee;
+    // check if tick spacing is 0
+    if tick_spacing == 0 {
+        tick_spacing = get_tick_spacing(fee)
+    }
+    redis::cmd("HSET")
         .arg(key)
         .arg("fee")
-        .arg(pool.fee)
+        .arg(fee)
         .arg("token0")
         .arg(address_str(pool.token_a))
         .arg("token0_decimals")
@@ -93,13 +99,12 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) {
         .arg("tick")
         .arg(pool.tick)
         .arg("tick_spacing")
-        .arg(pool.tick_spacing)
+        .arg(tick_spacing)
         .arg("liquidity_net")
         .arg(pool.liquidity_net.to_string())
         .arg("dex")
         .arg("UNIV3")
         .query(&mut con)
-        .unwrap();
 }
 
 pub fn update_pool(

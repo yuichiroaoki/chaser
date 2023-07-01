@@ -26,14 +26,13 @@ pub fn add_dex_pool(
     chain_id: u64,
     dex_string: &str,
     pool_address: Address,
-) {
-    let mut con = client.get_connection().unwrap();
+) -> RedisResult<()> {
+    let mut con = client.get_connection()?;
     let key = format!("{}:{}", chain_id, dex_string);
-    let _: () = redis::cmd("SADD")
+    redis::cmd("SADD")
         .arg(key)
         .arg(address_str(pool_address))
         .query(&mut con)
-        .unwrap();
 }
 
 pub fn remove_dex_pool(
@@ -72,15 +71,15 @@ pub fn get_pool_hashmap(
     Ok(target_data)
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: Pool) {
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: Pool) -> RedisResult<()> {
     match pool {
         Pool::UniswapV3(pool) => {
-            add_dex_pool(client, chain_id, "UNIV3", pool.address);
-            univ3::add_pool(client, chain_id, pool);
+            add_dex_pool(client, chain_id, "UNIV3", pool.address)?;
+            univ3::add_pool(client, chain_id, pool)
         }
         Pool::UniswapV2(pool) => {
-            add_dex_pool(client, chain_id, "UNIV2", pool.address);
-            univ2::add_pool(client, chain_id, pool);
+            add_dex_pool(client, chain_id, "UNIV2", pool.address)?;
+            univ2::add_pool(client, chain_id, pool)
         }
     }
 }
