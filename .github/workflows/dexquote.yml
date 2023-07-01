@@ -11,13 +11,14 @@ on:
       - "dexquote/**"
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./dexquote
+
 jobs:
   check:
     name: Check
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./dexquote
 
     steps:
       - name: Checkout sources
@@ -35,8 +36,6 @@ jobs:
       - name: Run cargo test
         run: |
           make test
-        env: 
-          JSON_RPC_URL: ${{ secrets.JSON_RPC_URL }}
 
   lints:
     name: Lints

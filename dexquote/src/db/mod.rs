@@ -6,8 +6,8 @@ use redis::RedisResult;
 
 use crate::utils::address_str;
 
-mod univ2;
-mod univ3;
+pub mod univ2;
+pub mod univ3;
 
 /// Get pool key for redis
 pub fn get_pool_key(pool_address: Address, chain_id: u64) -> String {

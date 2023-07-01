@@ -7,6 +7,31 @@ use ethers::{
 };
 use redis::RedisResult;
 use std::collections::HashMap;
+mod tick_bitmap;
+mod ticks;
+pub use tick_bitmap::*;
+pub use ticks::*;
+
+abigen!(
+    UniV3Pool,
+    r#"[
+        function ticks(int24 tick) external view returns (uint128 liquidityGross, int128 liquidityNet, uint256 feeGrowthOutside0X128, uint256 feeGrowthOutside1X128, int56 tickCumulativeOutside, uint160 secondsPerLiquidityOutsideX128, uint32 secondsOutside, bool initialized)
+        function tickBitmap(int16) external returns (uint256)
+    ]"#,
+);
+
+pub fn get_pool_ticks_key(pool_address: Address, chain_id: u64, tick: i32) -> String {
+    format!("{}:{}:ticks:{}", chain_id, address_str(pool_address), tick)
+}
+
+pub fn get_pool_tick_bitmap_key(pool_address: Address, chain_id: u64, word_pos: i16) -> String {
+    format!(
+        "{}:{}:bitmap:{}",
+        chain_id,
+        address_str(pool_address),
+        word_pos
+    )
+}
 
 pub fn get_pool(
     client: &redis::Client,
@@ -75,4 +100,40 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) {
         .arg("UNIV3")
         .query(&mut con)
         .unwrap();
+}
+
+pub fn update_pool(
+    client: &redis::Client,
+    chain_id: u64,
+    pool_address: Address,
+    liquidity: u128,
+    sqrt_price_x96: U256,
+    tick: i32,
+) -> RedisResult<()> {
+    let mut con = client.get_connection()?;
+    let key = get_pool_key(pool_address, chain_id);
+    redis::cmd("HSET")
+        .arg(key)
+        .arg("liquidity")
+        .arg(liquidity.to_string())
+        .arg("sqrt_price")
+        .arg(sqrt_price_x96.encode_hex())
+        .arg("tick")
+        .arg(tick)
+        .query(&mut con)
+}
+
+pub fn update_liquidity(
+    client: &redis::Client,
+    chain_id: u64,
+    pool_address: Address,
+    liquidity: u128,
+) -> RedisResult<()> {
+    let mut con = client.get_connection()?;
+    let key = get_pool_key(pool_address, chain_id);
+    redis::cmd("HSET")
+        .arg(key)
+        .arg("liquidity")
+        .arg(liquidity.to_string())
+        .query(&mut con)
 }

@@ -4,6 +4,7 @@ use clap::{Parser, Subcommand};
 mod checkpoint;
 mod config;
 mod import;
+mod sync;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -38,6 +39,16 @@ enum Commands {
         #[clap(short, long, default_value = "default")]
         name: String,
     },
+    /// Update pool states
+    Sync {
+        /// Number of threads
+        /// Default: 4
+        #[clap(short, long, default_value = "4")]
+        threads: usize,
+        /// Set configuration name
+        #[clap(short, long, default_value = "default")]
+        name: String,
+    },
 }
 
 #[tokio::main]
@@ -54,6 +65,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
         }
         Commands::Import { name, path } => {
             import::import_pool(name, path).await?;
+        }
+        Commands::Sync { threads, name } => {
+            sync::update_pool_states(threads, name).await?;
         }
     }
 

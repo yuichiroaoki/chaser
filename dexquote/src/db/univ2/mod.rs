@@ -61,3 +61,21 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) {
         .query(&mut con)
         .unwrap();
 }
+
+pub fn update_pool(
+    client: &redis::Client,
+    chain_id: u64,
+    pool_address: Address,
+    reserve0: u128,
+    reserve1: u128,
+) -> RedisResult<()> {
+    let mut con = client.get_connection()?;
+    let key = get_pool_key(pool_address, chain_id);
+    redis::cmd("HSET")
+        .arg(key)
+        .arg("reserve0")
+        .arg(reserve0.to_string())
+        .arg("reserve1")
+        .arg(reserve1.to_string())
+        .query(&mut con)
+}

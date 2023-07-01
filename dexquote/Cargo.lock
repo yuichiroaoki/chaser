@@ -397,7 +397,7 @@ dependencies = [
  "serde_json",
  "thiserror",
  "tokio",
- "uniswap_v3_math",
+ "uniswap_v3_math 0.2.26",
 ]
 
 [[package]]
@@ -710,11 +710,13 @@ dependencies = [
  "cfmms",
  "clap",
  "confy",
+ "crossbeam-channel",
  "ethers",
  "redis",
  "serde",
  "serde_derive",
  "tokio",
+ "uniswap_v3_math 0.4.0",
 ]
 
 [[package]]
@@ -3403,6 +3405,16 @@ name = "uniswap_v3_math"
 version = "0.2.26"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "684d41b0464b275f63364477efb9260ea2c53e8203e841edc58422b65cba509e"
+dependencies = [
+ "ethers",
+ "ruint",
+ "thiserror",
+]
+
+[[package]]
+name = "uniswap_v3_math"
+version = "0.4.0"
+source = "git+https://github.com/0xKitsune/uniswap-v3-math.git#509ae1ea9762d6b49a1bb6dcce1a3ed59b581b3f"
 dependencies = [
  "ethers",
  "ruint",
