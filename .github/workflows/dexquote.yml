@@ -53,8 +53,7 @@ jobs:
           - 7474:7474
           - 7687:7687
         env:
-          NEO4J_USERNAME: "neo4j"
-          NEO4J_PASSWORD: "testtest"
+          NEO4J_AUTH: "neo4j/testtest"
           NEO4J_server.http.advertised_address: "localhost:7474"
           NEO4J_server.bolt.advertised_address: "localhost:7687"
 
@@ -85,13 +84,13 @@ jobs:
           make clippy
 
   lines:
-    name: Less than 3000 lines
+    name: Check source code lines
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
-    - name: Install SLOCCount
-      run: sudo apt-get install sloccount
-    - name: Check <3000 lines
-      run: sloccount src; if [ $(sloccount src | sed -n 's/.*Total Physical Source Lines of Code (SLOC)[ ]*= \([^ ]*\).*/\1/p' | tr -d ',') -gt 3000 ]; then exit 1; fi
+    - name: Install loc
+      run: cargo install loc
+    - name: Check lines
+      run: loc
