@@ -7,11 +7,10 @@ use ethers::{
     types::H160,
 };
 use std::{error::Error, str::FromStr, sync::Arc, time::Instant};
-use tracing::{info, instrument};
+use tracing::info;
 
 use crate::config;
 
-#[instrument]
 pub async fn create_checkpoint(
     config_name: String,
     checkpoint_path: String,

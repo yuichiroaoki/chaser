@@ -534,6 +534,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "compute-univ3-address"
+version = "0.2.1"
+source = "git+https://github.com/yuichiroaoki/compute-univ3-address.git#c3f88c62596ac898a5be3040176487b47a8b5720"
+dependencies = [
+ "ethers",
+]
+
+[[package]]
 name = "confy"
 version = "0.5.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -709,12 +717,14 @@ version = "0.1.0"
 dependencies = [
  "cfmms",
  "clap",
+ "compute-univ3-address",
  "confy",
  "crossbeam-channel",
  "ethers",
  "redis",
  "serde",
  "serde_derive",
+ "thiserror",
  "tokio",
  "tracing",
  "tracing-subscriber",

@@ -1,3 +1,5 @@
+use crate::constants::provider::get_provider;
+
 use super::get_pool_ticks_key;
 use super::UniV3Pool;
 use ethers::abi::AbiDecode;
@@ -72,4 +74,35 @@ pub fn update_ticks(
         .arg("liquidity_net")
         .arg(liquidity_net.encode_hex())
         .query(&mut con)
+}
+
+// get ticks from redis if it exist, otherwise get it from the node and update redis
+pub async fn get_ticks_and_update_if_necessary(
+    client: &redis::Client,
+    chain_id: u64,
+    pool_address: Address,
+    tick: i32,
+    json_rpc_url: &str,
+) -> Result<i128, Box<dyn std::error::Error>> {
+    match get_ticks(client, chain_id, pool_address, tick) {
+        Ok(liquidities) => match liquidities {
+            Some((_liquidity_gross, liquidity_net)) => Ok(liquidity_net),
+            None => {
+                let provider = get_provider(json_rpc_url)?;
+                let middleware = Arc::new(provider);
+                let (liquidity_gross, liquidity_net) =
+                    get_ticks_from_provider(pool_address, tick, middleware).await?;
+                update_ticks(
+                    client,
+                    chain_id,
+                    pool_address,
+                    tick,
+                    liquidity_gross,
+                    liquidity_net,
+                )?;
+                Ok(liquidity_net)
+            }
+        },
+        Err(e) => Err(Box::new(e)),
+    }
 }

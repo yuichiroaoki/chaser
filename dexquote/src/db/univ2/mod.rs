@@ -38,7 +38,7 @@ fn hashmap_to_univ2(pool_address: Address, target_data: HashMap<String, String>)
 }
 
 pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) -> RedisResult<()> {
-    let mut con = client.get_connection().unwrap();
+    let mut con = client.get_connection()?;
     let key = get_pool_key(pool.address, chain_id);
     redis::cmd("HSET")
         .arg(key)

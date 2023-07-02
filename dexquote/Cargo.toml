@@ -17,6 +17,10 @@ tokio = { version =  "1.29.1", features = ["rt-multi-thread", "macros"] }
 crossbeam-channel = "0.5.8"
 tracing = "0.1"
 tracing-subscriber = "0.3"
+thiserror = "1.0.40"
+
+[dev-dependencies]
+compute-univ3-address = { git = "https://github.com/yuichiroaoki/compute-univ3-address.git", version = "0.2.1" }
 
 [dependencies.redis]
 version = "*"

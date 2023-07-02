@@ -19,7 +19,6 @@ jobs:
   check:
     name: Check
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
@@ -30,12 +29,26 @@ jobs:
   test:
     name: Test Suite
     runs-on: ubuntu-latest
+    services:
+      redis:
+        image: ubuntu/redis
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 30073:6379
+        env:
+          REDIS_PASSWORD: testtest
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
       - name: Run cargo test
         run: |
           make test
+        env: 
+          JSON_RPC_URL: ${{ secrets.ALCHEMY_API_KEY }}
 
   lints:
     name: Lints

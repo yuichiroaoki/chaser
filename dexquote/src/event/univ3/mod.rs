@@ -8,7 +8,7 @@ mod decode;
 mod tick_bitmap;
 mod ticks;
 pub use decode::*;
-use tracing::{instrument, warn};
+use tracing::warn;
 use uniswap_v3_math::{liquidity_math, tick_math};
 
 pub struct UniV3SwapEvent {
@@ -68,7 +68,6 @@ struct LiquidityUpdateParams {
     pub liquidity_delta: i128,
 }
 
-#[instrument]
 pub async fn update_with_liquidity_event<M: Middleware + 'static>(
     redis_url: &str,
     chain_id: u64,
@@ -106,7 +105,6 @@ pub async fn update_with_liquidity_event<M: Middleware + 'static>(
 }
 
 // UniswapV3
-#[instrument]
 async fn modify_position<M: Middleware + 'static>(
     redis_client: &redis::Client,
     chain_id: u64,

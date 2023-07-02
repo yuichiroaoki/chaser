@@ -2,11 +2,10 @@ use cfmms::checkpoint;
 use dexquote::db::add_pool;
 use ethers::providers::{Http, Middleware, Provider};
 use std::{error::Error, sync::Arc, time::Instant};
-use tracing::{info, instrument};
+use tracing::info;
 
 use crate::config;
 
-#[instrument]
 pub async fn import_pool(
     config_name: String,
     checkpoint_path: String,
