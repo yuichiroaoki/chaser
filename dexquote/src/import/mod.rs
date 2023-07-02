@@ -1,8 +1,9 @@
 use cfmms::checkpoint;
 use dexquote::db::add_pool;
 use ethers::providers::{Http, Middleware, Provider};
+use indicatif::{ProgressBar, ProgressStyle};
 use std::{error::Error, sync::Arc, time::Instant};
-use tracing::info;
+use tracing::{info, warn};
 
 use crate::config;
 
@@ -30,12 +31,36 @@ pub async fn import_pool(
     } else {
         (_, pools, _) = checkpoint::deconstruct_checkpoint(&checkpoint_path);
     }
-    let num_pools = pools.len();
+
+    let total_pool_num = pools.len();
+    let mut err_count = 0;
+    let pb = ProgressBar::new(total_pool_num as u64);
+    pb.set_style(
+        ProgressStyle::default_bar()
+            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .expect("Error when setting progress bar style")
+            .progress_chars("=> "),
+    );
+    pb.set_prefix("Importing");
     for pool in pools {
-        add_pool(&redis_client, chain_id, pool)?;
+        match add_pool(&redis_client, chain_id, pool) {
+            Ok(_) => {}
+            Err(e) => {
+                err_count += 1;
+                warn!("Error adding pool: {:?}", e);
+            }
+        };
+        pb.inc(1);
     }
 
-    info!("Imported {} pools in {:?}", num_pools, start.elapsed());
+    pb.finish_and_clear();
+    let elapsed = start.elapsed();
+    info!(
+        "Imported {} pools in {} seconds with {} errors",
+        total_pool_num - err_count,
+        elapsed.as_secs(),
+        err_count
+    );
 
     Ok(())
 }

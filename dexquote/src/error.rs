@@ -13,4 +13,6 @@ pub enum DexQuoteError {
     GetPriceError(String),
     #[error("{0}")]
     MathError(String),
+    #[error("invalid fee: {0}")]
+    InvalidFee(u32),
 }

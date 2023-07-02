@@ -1,5 +1,5 @@
 use super::{get_pool_hashmap, get_pool_key};
-use crate::utils::address_str;
+use crate::{types::DexQuoteResult, utils::address_str};
 use cfmms::pool::{Pool, UniswapV2Pool};
 use ethers::prelude::*;
 use redis::RedisResult;
@@ -37,7 +37,7 @@ fn hashmap_to_univ2(pool_address: Address, target_data: HashMap<String, String>)
     }))
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) -> RedisResult<()> {
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) -> DexQuoteResult<()> {
     let mut con = client.get_connection()?;
     let key = get_pool_key(pool.address, chain_id);
     redis::cmd("HSET")
@@ -58,7 +58,8 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV2Pool) -> R
         .arg(pool.reserve_1.to_string())
         .arg("dex")
         .arg("UNIV2")
-        .query(&mut con)
+        .query(&mut con)?;
+    Ok(())
 }
 
 pub fn update_pool(

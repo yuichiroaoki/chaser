@@ -2,9 +2,9 @@ use super::tick_bitmap;
 use crate::constants::{sqrt_p::get_sqrt_price_limit_x96, tick_spacing::get_tick_spacing};
 use crate::db::univ3::get_pool;
 use crate::db::univ3::get_ticks_and_update_if_necessary;
+use crate::types::DexQuoteResult;
 use cfmms::pool::Pool;
 use ethers::core::types::{Address, I256, U256};
-use redis::RedisResult;
 use uniswap_v3_math::{liquidity_math, swap_math, tick_math};
 
 #[derive(Clone, Copy, Debug)]
@@ -88,13 +88,13 @@ impl PoolState {
         chain_id: u64,
         json_rpc_url: String,
         pool_address: Address,
-    ) -> RedisResult<Option<Self>> {
+    ) -> DexQuoteResult<Option<Self>> {
         let redis_client = redis::Client::open(redis_url).unwrap();
         let pool_state = get_pool(&redis_client, chain_id, pool_address)?;
         match pool_state {
             Some(Pool::UniswapV3(pool_state)) => {
                 let fee = pool_state.fee;
-                let tick_spacing = get_tick_spacing(fee);
+                let tick_spacing = get_tick_spacing(fee)?;
                 let slot0 = Slot0 {
                     sqrt_price_x96: pool_state.sqrt_price,
                     tick: pool_state.tick,

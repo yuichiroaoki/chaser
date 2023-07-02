@@ -4,7 +4,7 @@ use cfmms::pool::Pool;
 use ethers::types::Address;
 use redis::RedisResult;
 
-use crate::utils::address_str;
+use crate::{types::DexQuoteResult, utils::address_str};
 
 pub mod univ2;
 pub mod univ3;
@@ -71,7 +71,7 @@ pub fn get_pool_hashmap(
     Ok(target_data)
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: Pool) -> RedisResult<()> {
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: Pool) -> DexQuoteResult<()> {
     match pool {
         Pool::UniswapV3(pool) => {
             add_dex_pool(client, chain_id, "UNIV3", pool.address)?;

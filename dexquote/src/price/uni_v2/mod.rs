@@ -59,8 +59,12 @@ mod tests {
         token_out: Address,
         amount_in: U256,
     ) -> Result<U256, Box<dyn std::error::Error>> {
-        let json_rpc_url = std::env::var("JSON_RPC_URL").expect("Could not get JSON_RPC_URL");
-        let provider = get_provider(&json_rpc_url)?;
+        let alchemy_api_key =
+            std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+        let provider = get_provider(&format!(
+            "https://arb-mainnet.g.alchemy.com/v2/{}",
+            alchemy_api_key.as_str()
+        ))?;
         let client = Arc::new(provider);
 
         let router_address: Address = "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506"
@@ -76,8 +80,13 @@ mod tests {
 
     #[tokio::test]
     async fn test_get_price_usdc_weth_sushi() {
-        let json_rpc_url = std::env::var("JSON_RPC_URL").expect("Could not get JSON_RPC_URL");
-        let provider = get_provider(&json_rpc_url).unwrap();
+        let alchemy_api_key =
+            std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+        let provider = get_provider(&format!(
+            "https://arb-mainnet.g.alchemy.com/v2/{}",
+            alchemy_api_key.as_str()
+        ))
+        .unwrap();
         let middleware = Arc::new(provider);
 
         let token_in = USDC_STR.parse::<Address>().unwrap();

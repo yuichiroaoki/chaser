@@ -1,5 +1,5 @@
 use super::{get_pool_hashmap, get_pool_key};
-use crate::{constants::tick_spacing::get_tick_spacing, utils::address_str};
+use crate::{constants::tick_spacing::get_tick_spacing, types::DexQuoteResult, utils::address_str};
 use cfmms::pool::{Pool, UniswapV3Pool};
 use ethers::{
     abi::{AbiDecode, AbiEncode},
@@ -7,6 +7,7 @@ use ethers::{
 };
 use redis::RedisResult;
 use std::collections::HashMap;
+use tracing::warn;
 mod tick_bitmap;
 mod ticks;
 pub use tick_bitmap::*;
@@ -74,14 +75,20 @@ pub fn hashmap_to_univ3(
     }))
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) -> RedisResult<()> {
+pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) -> DexQuoteResult<()> {
     let mut con = client.get_connection()?;
     let key = get_pool_key(pool.address, chain_id);
     let mut tick_spacing = pool.tick_spacing;
     let fee = pool.fee;
     // check if tick spacing is 0
     if tick_spacing == 0 {
-        tick_spacing = get_tick_spacing(fee)
+        tick_spacing = match get_tick_spacing(fee) {
+            Ok(tick_spacing) => tick_spacing,
+            Err(e) => {
+                warn!({?pool}, "invalid fee: {}", fee);
+                return Err(e);
+            }
+        };
     }
     redis::cmd("HSET")
         .arg(key)
@@ -107,7 +114,8 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) -> R
         .arg(pool.liquidity_net.to_string())
         .arg("dex")
         .arg("UNIV3")
-        .query(&mut con)
+        .query(&mut con)?;
+    Ok(())
 }
 
 pub fn update_pool(

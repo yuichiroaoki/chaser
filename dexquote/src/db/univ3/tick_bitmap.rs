@@ -82,7 +82,7 @@ pub async fn add_tick_bitmap_from_tick(
     fee: u32,
     json_rpc_url_or_ipc_path: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let tick_spacing = get_tick_spacing(fee);
+    let tick_spacing = get_tick_spacing(fee)?;
     let compressed = if tick < 0 && tick % tick_spacing != 0 {
         (tick / tick_spacing) - 1
     } else {

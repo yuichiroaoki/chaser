@@ -3,7 +3,7 @@ mod custom;
 pub use custom::*;
 mod tick_bitmap;
 
-use crate::error::DexQuoteError;
+use crate::{error::DexQuoteError, types::DexQuoteResult};
 
 pub async fn get_price(
     redis_url: &str,
@@ -12,7 +12,7 @@ pub async fn get_price(
     pool_address: Address,
     zero_for_one: bool,
     amount_in: U256,
-) -> Result<U256, DexQuoteError> {
+) -> DexQuoteResult<U256> {
     let pool_state = match custom::PoolState::init(
         redis_url,
         chain_id,
@@ -26,7 +26,7 @@ pub async fn get_price(
             }
         },
         Err(e) => {
-            return Err(DexQuoteError::RedisError(e));
+            return Err(e);
         }
     };
     let amoount_specified = I256::from_raw(amount_in);
@@ -68,8 +68,13 @@ mod tests {
         amount_in: U256,
         fee: u32,
     ) -> Result<U256, Box<dyn std::error::Error>> {
-        let json_rpc_url = std::env::var("JSON_RPC_URL").expect("Could not get JSON_RPC_URL");
-        let provider = get_provider(&json_rpc_url).unwrap();
+        let alchemy_api_key =
+            std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+        let provider = get_provider(&format!(
+            "https://arb-mainnet.g.alchemy.com/v2/{}",
+            alchemy_api_key.as_str()
+        ))
+        .unwrap();
         let client = Arc::new(provider);
 
         let quoter_address = "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6".parse::<Address>()?;
@@ -84,7 +89,12 @@ mod tests {
 
     #[tokio::test]
     async fn test_get_price_usdc_weth() {
-        let json_rpc_url = std::env::var("JSON_RPC_URL").expect("Could not get JSON_RPC_URL");
+        let alchemy_api_key =
+            std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+        let json_rpc_url = format!(
+            "https://arb-mainnet.g.alchemy.com/v2/{}",
+            alchemy_api_key.as_str()
+        );
         let provider = get_provider(&json_rpc_url).unwrap();
         let middleware = Arc::new(provider);
 
@@ -131,7 +141,12 @@ mod tests {
 
     #[tokio::test]
     async fn test_get_price_usdc_weth_3000() {
-        let json_rpc_url = std::env::var("JSON_RPC_URL").expect("Could not get JSON_RPC_URL");
+        let alchemy_api_key =
+            std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+        let json_rpc_url = format!(
+            "https://arb-mainnet.g.alchemy.com/v2/{}",
+            alchemy_api_key.as_str()
+        );
         let provider = get_provider(&json_rpc_url).unwrap();
         let middleware = Arc::new(provider);
 

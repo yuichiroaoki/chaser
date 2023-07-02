@@ -48,7 +48,7 @@ jobs:
         run: |
           make test
         env: 
-          JSON_RPC_URL: ${{ secrets.ALCHEMY_API_KEY }}
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
 
   lints:
     name: Lints

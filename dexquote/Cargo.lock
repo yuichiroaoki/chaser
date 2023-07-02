@@ -721,6 +721,7 @@ dependencies = [
  "confy",
  "crossbeam-channel",
  "ethers",
+ "indicatif",
  "redis",
  "serde",
  "serde_derive",
