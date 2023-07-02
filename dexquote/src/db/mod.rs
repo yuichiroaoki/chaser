@@ -1,10 +1,15 @@
 use std::collections::HashMap;
-
+pub mod token;
 use cfmms::pool::Pool;
 use ethers::types::Address;
+use neo4rs::Graph;
 use redis::RedisResult;
 
-use crate::{types::DexQuoteResult, utils::address_str};
+use crate::{
+    graph::{add_pool_to_neo4j, add_token_pair_to_neo4j},
+    types::DexQuoteResult,
+    utils::address_str,
+};
 
 pub mod univ2;
 pub mod univ3;
@@ -71,17 +76,32 @@ pub fn get_pool_hashmap(
     Ok(target_data)
 }
 
-pub fn add_pool(client: &redis::Client, chain_id: u64, pool: Pool) -> DexQuoteResult<()> {
+pub async fn add_pool(
+    client: &redis::Client,
+    chain_id: u64,
+    pool: Pool,
+    graph: &Graph,
+    chain_label: &str,
+) -> DexQuoteResult<()> {
+    let (token0, token1);
+    let pool_address = pool.address();
     match pool {
         Pool::UniswapV3(pool) => {
-            add_dex_pool(client, chain_id, "UNIV3", pool.address)?;
-            univ3::add_pool(client, chain_id, pool)
+            add_dex_pool(client, chain_id, "UNIV3", pool_address)?;
+            univ3::add_pool(client, chain_id, pool)?;
+            (token0, token1) = (pool.token_a, pool.token_b)
         }
         Pool::UniswapV2(pool) => {
-            add_dex_pool(client, chain_id, "UNIV2", pool.address)?;
-            univ2::add_pool(client, chain_id, pool)
+            add_dex_pool(client, chain_id, "UNIV2", pool_address)?;
+            univ2::add_pool(client, chain_id, pool)?;
+            (token0, token1) = (pool.token_a, pool.token_b)
         }
     }
+
+    add_token_pair_to_neo4j(graph, chain_label, [token0, token1]).await;
+
+    add_pool_to_neo4j(graph, chain_label, pool_address, token0, token1).await;
+    Ok(())
 }
 
 pub fn get_pool(

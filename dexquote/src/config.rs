@@ -5,6 +5,9 @@ pub struct Config {
     pub json_rpc_url: String,
     pub ws_rpc_url: String,
     pub redis_url: String,
+    pub neo4j_uri: String,
+    pub neo4j_pass: String,
+    pub chain_label: String,
 }
 
 impl Default for Config {
@@ -13,6 +16,9 @@ impl Default for Config {
             json_rpc_url: "".into(),
             ws_rpc_url: "".into(),
             redis_url: "".into(),
+            neo4j_uri: "".into(),
+            neo4j_pass: "".into(),
+            chain_label: "".into(),
         }
     }
 }

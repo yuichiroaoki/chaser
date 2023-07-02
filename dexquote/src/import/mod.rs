@@ -1,7 +1,8 @@
 use cfmms::checkpoint;
-use dexquote::db::add_pool;
+use dexquote::db::{add_pool, get_pool};
 use ethers::providers::{Http, Middleware, Provider};
 use indicatif::{ProgressBar, ProgressStyle};
+use neo4rs::Graph;
 use std::{error::Error, sync::Arc, time::Instant};
 use tracing::{info, warn};
 
@@ -14,6 +15,8 @@ pub async fn import_pool(
 ) -> Result<(), Box<dyn Error>> {
     let start = Instant::now();
     let conf = config::get_config(config_name);
+    let graph = Graph::new(conf.neo4j_uri, "neo4j", conf.neo4j_pass).await?;
+
     let redis_client = redis::Client::open(conf.redis_url).unwrap();
 
     let provider = Arc::new(Provider::<Http>::try_from(&conf.json_rpc_url).unwrap());
@@ -43,7 +46,12 @@ pub async fn import_pool(
     );
     pb.set_prefix("Importing");
     for pool in pools {
-        match add_pool(&redis_client, chain_id, pool) {
+        let pool_address = pool.address();
+        let pool_on_redis = get_pool(&redis_client, chain_id, pool_address)?;
+        if let Some(_pool_on_redis) = pool_on_redis {
+            continue;
+        };
+        match add_pool(&redis_client, chain_id, pool, &graph, &conf.chain_label).await {
             Ok(_) => {}
             Err(e) => {
                 err_count += 1;

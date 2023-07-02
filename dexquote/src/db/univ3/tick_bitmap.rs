@@ -80,7 +80,7 @@ pub async fn add_tick_bitmap_from_tick(
     pool_address: Address,
     tick: i32,
     fee: u32,
-    json_rpc_url_or_ipc_path: &str,
+    json_rpc_url: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let tick_spacing = get_tick_spacing(fee)?;
     let compressed = if tick < 0 && tick % tick_spacing != 0 {
@@ -96,7 +96,7 @@ pub async fn add_tick_bitmap_from_tick(
         chain_id,
         pool_address,
         word_pos,
-        json_rpc_url_or_ipc_path,
+        json_rpc_url,
     )
     .await?;
 
@@ -107,7 +107,7 @@ pub async fn add_tick_bitmap_from_tick(
         chain_id,
         pool_address,
         word_pos,
-        json_rpc_url_or_ipc_path,
+        json_rpc_url,
     )
     .await?;
 

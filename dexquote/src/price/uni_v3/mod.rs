@@ -8,17 +8,13 @@ use crate::{error::DexQuoteError, types::DexQuoteResult};
 pub async fn get_price(
     redis_url: &str,
     chain_id: u64,
-    json_rpc_url_or_ipc_path: String,
+    json_rpc_url: String,
     pool_address: Address,
     zero_for_one: bool,
     amount_in: U256,
 ) -> DexQuoteResult<U256> {
-    let pool_state = match custom::PoolState::init(
-        redis_url,
-        chain_id,
-        json_rpc_url_or_ipc_path,
-        pool_address,
-    ) {
+    let pool_state = match custom::PoolState::init(redis_url, chain_id, json_rpc_url, pool_address)
+    {
         Ok(pool_state) => match pool_state {
             Some(pool_state) => pool_state,
             None => {
@@ -39,7 +35,6 @@ pub async fn get_price(
     Ok(amount_out)
 }
 
-#[cfg(not(feature = "ipc"))]
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -41,9 +41,29 @@ jobs:
           - 30073:6379
         env:
           REDIS_PASSWORD: testtest
+      neo4j:
+        image: neo4j
+        options: >-
+          --health-cmd "wget http://localhost:7474 || exit 1"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+          --name neo4j
+        ports:
+          - 7474:7474
+          - 7687:7687
+        env:
+          NEO4J_USERNAME: "neo4j"
+          NEO4J_PASSWORD: "testtest"
+          NEO4J_server.http.advertised_address: "localhost:7474"
+          NEO4J_server.bolt.advertised_address: "localhost:7687"
+
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
+      - name: Set a token address constraint
+        run: |
+          docker exec neo4j cypher-shell -u neo4j -p testtest "CREATE CONSTRAINT address_arb_constraint FOR (token:Arb) REQUIRE token.address IS UNIQUE"
       - name: Run cargo test
         run: |
           make test
@@ -63,3 +83,15 @@ jobs:
       - name: Run cargo clippy
         run: |
           make clippy
+
+  lines:
+    name: Less than 3000 lines
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Install SLOCCount
+      run: sudo apt-get install sloccount
+    - name: Check <3000 lines
+      run: sloccount src; if [ $(sloccount src | sed -n 's/.*Total Physical Source Lines of Code (SLOC)[ ]*= \([^ ]*\).*/\1/p' | tr -d ',') -gt 3000 ]; then exit 1; fi

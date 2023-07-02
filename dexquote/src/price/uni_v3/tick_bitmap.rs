@@ -10,7 +10,7 @@ use uniswap_v3_math::error::UniswapV3MathError;
 pub async fn next_initialized_tick_within_one_word(
     redis_client: &redis::Client,
     chain_id: u64,
-    json_rpc_url_or_ipc_path: &str,
+    json_rpc_url: &str,
     pool_address: H160,
     tick: i32,
     tick_spacing: i32,
@@ -32,7 +32,7 @@ pub async fn next_initialized_tick_within_one_word(
             chain_id,
             pool_address,
             word_pos,
-            json_rpc_url_or_ipc_path,
+            json_rpc_url,
         )
         .await
         {
@@ -65,7 +65,7 @@ pub async fn next_initialized_tick_within_one_word(
             chain_id,
             pool_address,
             word_pos,
-            json_rpc_url_or_ipc_path,
+            json_rpc_url,
         )
         .await
         {

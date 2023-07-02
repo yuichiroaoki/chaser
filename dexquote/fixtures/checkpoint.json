@@ -1,0 +1,2197 @@
+{
+  "block_number": 106785186,
+  "checkpoint_timestamp": 1688213376,
+  "dexes": [
+    {
+      "block_number": 106785186,
+      "dex_variant": "UniswapV2",
+      "factory_address": "0xc35dadb65012ec5796536bd9864ed8773abc74c4",
+      "fee": 300
+    },
+    {
+      "block_number": 106785186,
+      "dex_variant": "UniswapV3",
+      "factory_address": "0x1f98431c8ad98523631ae4a59f267346ea31f984"
+    }
+  ],
+  "pools": [
+    {
+      "address": "0x8165c70b01b7807351ef0c5ffd3ef010cabc16fb",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "token_a_decimals": 6,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x905dfcd5649217c42684f23958568e533c711aa3",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x11eecdbd8f2d670016d061e4c064072e6158ede2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x155f0dd04424939368972f4e1838687d6a831151",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcb0e5bfa72bbb4d16ab5aa0c60601c438f04b4ad",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x515e252b2b5c22b4b2b6df66c2ebeea871aa4d69",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "token_a_decimals": 8,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7050a8908e2a60899d8788015148241f0993a3fd",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x3221022e37029923ace4235d812273c5a42c322d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd4d42f0b6def4ce0383636770ef773390d85c61a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x2a2842f0fe8054384a8ebea58ae353d2a94e0c59",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x64804fd247f9047534dfe3f39acf85c059dfd16c",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9fed11d8dafeec39ae10188c599a3cd7cdcfc0ad",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x81bf79c1d79496335ac821f5588be89548f85e60",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x58e07553d44a7c8538f4e383065254ad44ad4c2f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb9009873a3c9d3eaebbbf2a36649338035470596",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x7a1dec2aba015cff05bb654da2550b88f843a50d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xbb50199ac5d69c3cec1e028453f4a6f6f4e44c75",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xb3f5daa49e6ca7026a511f5a79b491958e63f5a5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x08f6d3c2f7f99dcd276ace4113ac11d65566ba3d",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xbc578bfaae7089f3b737de93b410768c28011a05",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe6e704afcf04d3da2780272395abef6ab0f0eea7",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x734e930eaf31bdd65c4b0614b6165d5bc99aa038",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb9f991133adfe44dc12b29dbeb13d6c21d19f803",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x459d943f684057112ec44310886b1bd739af538c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xbb75e31d9151615383963d3498581a33d0dc4536",
+      "token_b_decimals": 8
+    },
+    {
+      "address": "0x0b806fc9530a1c493ca15a06f832170ab4ddefc0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3ca5884fbcd36643ab6dcce4007e9d0f914cdfb7",
+      "token_a_decimals": 8,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc4a371b8cec0e7eea55fe0a9441c197a2c5d2862",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x81c926af284dbbd290b830d69f06823c346a264f",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x58739d66fab2ab2103e5757af4495c1002748ea4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xac83ae62c28157fde5a2a360b83a7e4909e4eed5",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x26f5b0bf47d7b31da13e70e4b5df29441b1461fc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x415235c92cb0ea902f6a5aef2230aee226589249",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x05b04c68abfd85e72f3ac72692089eca433efb2b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x689df05c0447e70affaa66babf0e6156414c2bc6",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0ad8bbf0d93b47518442e47a5059604687ce2d8b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2cdc8b6ea9d162e31024d3623e510b97aab04d12",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf03730b1c0f7ffd61fc8805ac231e012543cf368",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3f286bc855af675c5229737ea3538f4c7161b84e",
+      "token_a_decimals": 8,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x78a6873933c313bcac2b1fb71ef3fde6d6116358",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xabad5f825d2469e7b1fb7a77e159ece3e639ff6a",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x7f59b27953bd36b7b3a81c34c964377d465bf0f0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x0be7552ca38cbda54655f1aade4721e86accb180",
+      "token_a_decimals": 8,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x52510feda6027509e5b859fb8b89f09c7c9b42cc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x275155ff93b203b594a2d38202f84ccb83c1cb8c",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcb4cd16a4e414eb2b7db6218ed36aec4fee1f7c7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xea6cc62012c73a01e5ade75a6aa37d93cc21522c",
+      "token_b_decimals": 8
+    },
+    {
+      "address": "0x32f93058ea4f660b7bd5f7af2ac562e93df00df7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x64796a29cafb7a99f52bd70e0f4de941e183f5b4",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb2be02f60bb94972d70bc58b1586a94dcd4fc52b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x9cb696a5af0efca36953f68859ba2c44b21c0e32",
+      "token_b_decimals": 8
+    },
+    {
+      "address": "0x4136831f8da463d9460d96a76206b94767de9c92",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x9f3668e1c32571b0d50ef1ebf925d36424361df4",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x5d8d1d46760b4c502776ac637925eb4f0a290dc5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x5c67f6c2fb28978d9e08c141d67121d28c3b0ba0",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf4a738d9cae344cea4165f335d478493a7946f24",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x86a1012d437bbff84fbdf62569d12d4fd3396f8c",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6f6ba3571a607e62f4b7f722e019925269e90f5a",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xec1e2b352f29adc8f0854dee2dc557d2763dbfbe",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+      "token_a_decimals": 18,
+      "token_b": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xbdee369abf5c3dfff5dc65841e939747ba706a5d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "token_a_decimals": 8,
+      "token_b": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x9da6793652c1ca6b00244fa8d7e2ad4edfb2dddf",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb9a1220d2ecf5b67ae5e431158cea9ef1f9e782c",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1449019596b04ed468e6f91b97450c16efdbf8c0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x116d794c0bf31388470fa66f21b83c5b74da1ed8",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x39796a2e6d55f76dd62f3caa0adc1d19d38eaa5d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xcc142c536d628b4e039b473c93fd2a18456852d7",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xff13348778cc2ced614f6f73a8e488ac11292f25",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f",
+      "token_a_decimals": 8,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x50c754499998a12e56fff3cb8412a0b45b2c8db0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2d33922b92790fe123ebe5337efaa37e4ed44d0d",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x12e1e5c836a3bd3cd8f7ca2c6e7fe277facfebda",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf809c8f8fb601112a5a3e7df94fa1de893e8d361",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x26274e0db149c847df7a3cf1fde9e93522a42d72",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd786ca0a3f6caa22938cd751b905c39f84555bcb",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x33c8e8666fa53dd6973137e4626b76df3ba0b1b8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x478046ed00d58d1d842f2ea3cebc2e4431af6aae",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x96e4943164ded0d375316c4a0a1ebd65265ae4c2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xecc22dd5ffd4b5b602063a083dd4fc04c21ab4ce",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9055ef41de2b110370d0cda23725e3725d44b79a",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd17daba85cad55b14e4cb973f55267d9004cbf28",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xdc4a9e1d98ed5089fd4347d167d613ba8e2023db",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x75e63d4369a4b60eedbd0e08ee19e2ff07ef3e7e",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x4c46dee7a1e6e8b9abc04efb4c6c5ad2bae133a2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x791a6119e7ea8853ed0dec66ddf21bde655bc809",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x139a0f02c3f4dcc37b55b59675fccabc1257fc0c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x69a1a27a7dcf5bf6b72077d275d54f52d741f79d",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcc2d169f278d05a684ac6cfbd119ce91fde35582",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc01e7a228b2aa715b586c9e0b112c623cfece804",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa84b39c81d5e1e3d970236fb7a11b4fc8c7bcedc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x55786251b74586e1938188a1489fa7f756b20ae5",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf659e3558bbd4e31c0ed9048c3507ec9e809b295",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb085325c4e2dc801d92373101def754148fc843b",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x000f65a091bac5c5f823ed479505b6810067ccb7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x405de6d35134ee6dfd2075c97ffbdbe2110629bf",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc6fbdece3a5a5f136d57c9595abd766e98094cf6",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfac53d9b8c807b448e576e8d70d161c0910f1021",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6f078a9a30d7c698e93f35191d7035eb64026675",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x9d575a9bf57a5e24a99d29724b86ca021a2b0435",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x3de97b7f4099307e8baf528d544d98580970401c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x39654feebfb03912ef4f52013e2c2ea0f9b505f5",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x304357ccf63b42b2b408241ae8348d2435537aad",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd83e49cb6d7fdaeeafaef83f1fd5e411f0fc8e58",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x2d21171682a61a00f744eafbca2bc35aab061d5b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa6ae4e95b73b753c405274ea3ab3c1704c34e821",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf06668b4fd42a528c2cc41a86b04d13de82b41c5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x137598bada4fa1d7c76bfd906d8986c17d1067f8",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x5bedf047ee87d489890ae0016e7725f8f538dbf0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb61f5a8d65abd06bb59914b7024b691445fe69c5",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc90b87dbb92bce76494717f43ca12c37d2ce4b72",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xedc4b128b5e29365679a2795d42961dd559f1248",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x3ec938e54beaf30804750f11d992cc4751f08bdd",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x4bba930a68dd7ffefa4eae3c90318abc39bf7cc3",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6b984d94df3b3635fbf7a837ec7f1e3394abcd05",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa312520c8cdbd006e327ff77b7856486202f8524",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xc6a54e887ee4e591cfa65beece34a3723451147b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xdaec244a8ccd23a1ffcd882e1fdf81a210993dd8",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xa9ef69cac80488ef05926023421214c98f22105d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1a7bd9edc36fb2b3c0852bcd7438c2a957fd7ad5",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xdce0a1f1c957142e13726fd363ba38f8c0533386",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1e50f8112b8cc96482f39d2eb0ecedb1d091c770",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9329f9690d120ea2bc386f373fbc6bbeddbb6138",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb337e99e0fe700d4dc8f08056291cf1312071473",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7a4464e9718301787d796f4cd96222cd75eee66f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x89c9a25dbb1d54e69f3ea8a3be86f23e8a7bf950",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xfc1acf07202f6fac951947427b79284d86a965d2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x48d0aabceb0c2352ee6b52b3322c18b6c486139d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x4a94a7a2cc80e4588c3da64a1d95e1cef9db0c82",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1a941389ae404ca75c3ff67cac8b7b626b0d6703",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x07cfec95dd2b8f237024d43230b93a748604cc7f",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8d8415e8f9fd6e7d0a1e6cad05f52dc83fb80ad2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x72ce55c986854f4ef3bd6d2ad524f172f6d3a6c4",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xbdbf0454064ae22d40a835f0edf5aaf2b1f49535",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x432fb7718623a19ccb38279372a17b481148138e",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd8b2bc1310f9adeb8f112b7ab8d52dd1ad08b176",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x70b0d0a92ef014769bea320dd458ff2ab0fd3d91",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xfa435e4514cf2b9e20622304f561b27bbdd99f64",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x5eb68e97dbf992d353a781cc173bfb3b54914061",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x19e36518d9381f43fcbe24a5c322c6d672893ec7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7f2a71fd207471eaab56090893b9d344e11fd52d",
+      "token_a_decimals": 5,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x19d566afe0f7cbf0eeb2f9bcb6f0dffaa8c9da29",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x41cc0f6b87bb61e7789aa3908c1e929b9bbccb85",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcc74cacbd083f10f84370f9f1aad1479cde134a2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x6b8d0dcb55d333a86d26a70875b54499063c87d5",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x5e9b0f68267dc68273a839e51ecec4a0324cd3b8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x577c0c99a6a7b1a1e165beeb9b569a219abf1d9d",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x72d471a9ee112ba4cd2032968824f9f45a342e1f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x908ab6258757761fe5a86853a2690501ce39df3b",
+      "token_b_decimals": 5
+    },
+    {
+      "address": "0xd56c89de821a98a3e3a7b5ebf818ea84a1cb77e5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x68f143bf19227a32f7a85e99805a17fda003b530",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x541f00d41947ecc5f08f08d7d68833c3b1951186",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_a_decimals": 18,
+      "token_b": "0xfd086bc7cd5c481dcc9c85ebe478a1c0b69fcbb9",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x3101836cd04e1981ec1225ffe39bd1206664c4bb",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xcaa349163db81941b88de8d8e37786053363fcc7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7734648e49aea3d92b3b0240da3e6df37b195313",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1599a242062a59bf3c7a01f2943adb28415be69a",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xde529c9c92539c30ca82cdd102aed8e86326e08f",
+      "token_b_decimals": 5
+    },
+    {
+      "address": "0x39fad1c9dbda7623b22717f54407734d016a3bc9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x155f0dd04424939368972f4e1838687d6a831151",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x41f6c51f0ca52279380be89b4f7c1df082d30fed",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1a7bd9edc36fb2b3c0852bcd7438c2a957fd7ad5",
+      "token_a_decimals": 9,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x3cf3147bedf97a1181c980a4811889c0059e4ae9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x48482bf68b4c963ee415b477f66a437b63958045",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa9e1aeff84b76b22ca388d729c3c349f18e78594",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe4e02d69dfacc482dbfbcb4f5f173bc378422717",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x3bd4c01c8033e20de9720c3e21df31619802b66e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb689223f7935cdb5b74f329e018c498adfa15a93",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6f79a090d5b398a4e4dccb9063654831e06ae799",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd116cd4c14677d05b8a376c02f115808b00ad3e0",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x54b9b260016990be64869dbc738763354f6ecf65",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x13a1c16a36dc5cba6aff21cb6839021c86f671b1",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7f729c2088792e01cf0727a058061d3061e70997",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc57b5f6a04ec9c5be8be17275d715134ff33d2eb",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa4de11129ebde3b5f62a26d6113bf31d1d09e7fd",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x93f0eaf9bcaa00ac25da90f41683671fc5cae805",
+      "token_b_decimals": 5
+    },
+    {
+      "address": "0xda7424e032fbd5c1bc0c418e84479d74043668eb",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x955b9fe60a5b5093df9dc4b1b18ec8e934e77162",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0b8495404505cc0e6f0d5ff2d074dc92901053ff",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xd4d42f0b6def4ce0383636770ef773390d85c61a",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x893eb19369821158a5025c50cc460004940c6f11",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc4e3caae443f60d5c0af6eb2a0fc5c8720372e5b",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1714f6fd1dfb20b3956bf7aa66e0869a63a2aa1f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x06b293afbefe36084b04b1ff4f6e93eccea87be3",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd3b81abdecf5787f1f342b33f3ac2c258c9e6bfe",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb0b8bd4effc083493c704b522b81e464661bf1b3",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x125cbe478f28d4fc6e9bddefa9cb583b9de0fc6b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_a_decimals": 18,
+      "token_b": "0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x05c6f695ad50c16299bedca3fe9059b56550082f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x88fd103681a8d864a73c25a2295f13efcda1d40a",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x6fa81f74228b06b7956bfa80382e309e4b3b4946",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x2211727770afa868e970b506bc824dc6b36db571",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf4bb5b75ddc4807f9adf3a5e92a87f0223d0bea0",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcc5c23eb73131d7438bced913229bc1804a493b2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa779021dab790b31dcdb7caec09145a75d65881e",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x9237061ec47174ac2249551115033166957abb21",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x0061137e491c7b823707e38b33bfa063edd2d3ca",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7039b6ec246acb69fbc792303873116388dc4082",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x6fa81f74228b06b7956bfa80382e309e4b3b4946",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6fd357858d5bf7f447a63c363893c44e3744534c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_a_decimals": 18,
+      "token_b": "0xf97f4df75117a78c1a5a0dbb814af92458539fb4",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb3ae4fb013e28aac76ce6f24b2fcc4b6ab558fcb",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf6d9c76250d4b6bb78546d504ea0cccdc6968e5e",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x3e264b35a6e2701284565ce5dcb22f9be5cbda3f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x323efc77ce28613e4ac46a0d7a7e0779ad6163db",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa39c61b6c60e9422bc3cb6098075252a821ef4b6",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe39d87e2c35f3ff4d19c11ecfd9ca72af6eae8e9",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x70df9dd83be2a9f9fcc58dd7c00d032d007b7859",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x38ae57d5421743c42b4111802798ca99ebcab311",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa534481c311cca746a2251c6b4c46eb80737315c",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf0657a5ade0170e226361cdd45f49f1c5152373b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x52ee87501b0b69e52a73de5ece8680c907ba1501",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xdc1fe991681e34b575e72e64c1185b7c2016f172",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1c50751a54df214acda7bec2ef99c317898a12a2",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x692f6da4abfd5acd17392021ae04e38cfa14627a",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa896a66ef9763c111b6266e7df4a0e7799905c11",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc64a7819bd2a4794d73543ad28728c6947eb3d35",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x0672f5380b554ebcf567b3ea67510be619470605",
+      "token_a_decimals": 15,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x067fab8225515aa8b8675da68dcb073e89e29b03",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb13e3999e7e3616ed9777b7c4daab499df9c238d",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x5dfc74cb39fe00435ce5508bb95e9bed93493c6f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x479a4e65fba5eff9585bb2e6344eb34561b2adb4",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x83ccb4cfdbafdbc35027c8cfac6a43f5a7357b21",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x038a46879c44f3a9cafcbeee1691cd8d9735e2ba",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x28e18f15c147162faeb1e771260becb45bdf6bfc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x86a1012d437bbff84fbdf62569d12d4fd3396f8c",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xda7bbd6292ef0d668082e3fb60ad9d125c121082",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x629aa19df31882fac22d7f845ee8053c137a1741",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3cd1833ce959e087d0ef0cb45ed06bffe60f23ba",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb832340efe23371a5ce2347898dc78fb89f65d4e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x387539bc40d67c5c66315f93ecf6196328fd3c97",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6d4b0d0c865a1561ad1904893396756d5b8137e8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x9140f6ef8f14657da4ed32b04813370c867a978c",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb33da99185f354846ae32b2dab05c3ea6544462d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xf42ae1d54fd613c9bb14810b0588faaa09a426ca",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x9471d482c51d5539bc4e80c05c0fdc52ca3f9bcf",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf5e3f64997dc94782735c00b5150038ce6ccbd5f",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x45cae3b660e9d741839bf5e9624912390acfbfd3",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfbe3bed566583af6cf044252edebf6b96e14548e",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x95cc1c88187627033ff20ec018ea16fe85973bf4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe618cd7fb90626db1f73bc5b7e7f66874525e079",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x4e3c1b11f1deac09946197bff633e895fc659d63",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x23104325ab8909064e8e4443bf2cc3693c061519",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xebd2b22ba1b5fdd11460006c6cd1fd739dcbf3ba",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x67faf2056fb43e6a009475d07ead3c35c8e6323a",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0de29a45ae47431a94399cb15b6d250ee46d2389",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x5269c30f6cb8a75282b0141e7071406442d2b272",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xe3579ed3823846518dc6b51e31360cef6cff189f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xafd871f684f21ab9d7137608c71808f83d75e6fc",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xab963202985492744f75c38c6b96e0f4295d452d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3ef19a13e473585ef180cb4c99ad2984dfc35392",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb2fa688396f35c93ba4f054866ef8527902fec07",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xfc5a1a6eb076a2c7ad06ed22c90d7e710e35ad0a",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x2e93f4956caa648034da636f63e8ba59e7e5dc20",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2efe285133a2bb0e293ebe2c26eca1271c398ba6",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8a36d4cd3ceff9985801b8ae26569960543867d0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x08bb2e3f6beff7b6809f06a410067de8d866a3ac",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x62887e42c89292c70cb56d3e5342b67b2efbc46b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x5bb698e9e2e7ac4530f85bed1a225e12ff154bf0",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0bf02eba5b7de70c162d920ab66e957a6156da50",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7df73b1c5c927dcd73b0362463b15356b971ec16",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x610ad685d012fb8c298d213caeec85a6012be3f4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7e435d80c2c75d58efd6f06938ace68f022af397",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x75005860f59f6c28773180eeb50610dbc57d0e90",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf86e25f235d2107b4886dab3e1ecd00e8e15970a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7d8071d449c5f9892f9fbb05bdb0566180f4384b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x762518e30beac152ea28f1b377eddc8fa744bdc6",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x08da83452ae158c3f348d4e0789b7a78989f34ee",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfa42da1bd08341537a44a4ca9d236d1c00a98b40",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa18317e34aaa50c48601c0aef2b6c78c7cc43888",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc4be125963900a273be244f1d25cf93a9692bcc3",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xfb8f616966e7620c5d8f2109c04a14e69d200038",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfb6db1fef1a9e231813ddfff454833be5759040d",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb04e5b38e81fb43978495355c87f0dd489eb3ba8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x976fa2e7ba147be63b0f88b76849c3d065cd5d60",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x89450f6c7d7f2c5971e9ee28e94d8b199d17f673",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
+      "token_a_decimals": 18,
+      "token_b": "0xfa42da1bd08341537a44a4ca9d236d1c00a98b40",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xf4a6c89e06318717657d352d16cfc7739d9a8b85",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xfa7f8980b0f1e64a2062791cc3b0871572f1f7f0",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xce615aa94001a051c5a28222583ff77da2eb4707",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa7c78e43464a82fb4d403cc0c1c4e471306f514d",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x24c7486be6b60e4026944d57d6e9cbb7721ee9ed",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc196df476dfddf0d46243eaeb65b8c9a3174c130",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xefe9cff622d0f78ec264d2ec316b92daab5bc3ef",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xaa9e504ad48268f1c182cdf90deeb0a4845f0859",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x92ba8f0fc60a1333f4e9c6b546ff31c350eb3f62",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x976fa2e7ba147be63b0f88b76849c3d065cd5d60",
+      "token_a_decimals": 18,
+      "token_b": "0xb04e5b38e81fb43978495355c87f0dd489eb3ba8",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x20a1ed2c7fb5c41998853865e3184e67c72cfe05",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x953b3e4530d0f92c8e3ccb283f9af736ee073478",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x17c5cf46794e76820147b0425e6ad8a748d4414e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x4610e9552da120fb34b49c188945664b43ed1dbb",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1cacc2f39ec980d22f2aa9887e402e4b37b22bb3",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x0402e92afde73e7c10638bd2d018682b67decdce",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x14860f32307eb323d340418350671ccbdc64cde2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa458e4bded4e17c5735470314eaf9c4a164187ef",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xfa615287edd406b2fcd8bdba008f096ae465465e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc21afb56099af6d1c657b7ac48ad0fa67f940623",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6fa4f697511f99b1dfc1c324c4b6403a2b5e8309",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe433d854373f6081e5f8075899124f4a4d2e2e7b",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x4682d9f2d429af02b0f9bd7afc2343a00f696820",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xdc2e55dff990d86722891a373416fce6c8310c3d",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x36d26d6b45579a015f591ed34fd2ea31455f7fc5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xdc2e55dff990d86722891a373416fce6c8310c3d",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x032502c69339bc722e39a35d8fbfd2bb72461fad",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7a3322c43a69876aab2bfe223cbd197ef71afb68",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x16e46033395867abd451115bfcf98281bf99afe3",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2ae1ef41cd23e3e77f75789e9393d8951705470f",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa2886a1818dd25f40c8deb10ca29e96edcf6375c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2ae1ef41cd23e3e77f75789e9393d8951705470f",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x63afacdfbf59018f2a0dc0dba9394b9f9656799b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd6fee6cf72e567b479741062658b6f19386d2c10",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8a51da1c1a3ef995f7ddb11b8d1d95938ab2f142",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x76de4762a2e6e8e71d4a58142b0fb242a2a73c84",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xbac34489896419b068f1802205c4bf666b0610f8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc0abd57aaa1ef3adb4bac37df395db69cf9c7a5b",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xaa29b89ccb6dbd6d1e9e784aa36015319e0203d7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1f3c60641a3ed65a5d7eaaac989c838806f5cdc5",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xbb3e1698672f7f9f88649d1319da4ee5907ae0d9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x06cf3ace5554645b422db0cbade92f609066cce8",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb5ac9f5566071c7831d1886bd7ef356a9dba354f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb4badda88ebd352eed1dde060dece12801f3fe59",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x7ca483a96078fa311333515a64db1ca8e88af455",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7d2d35cf256cb47b8caa6eb4d793f1c7e2228d35",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xace3b652a3fc5419f26cddd5f15b557d43f94233",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc55ae69b22dec8e399c9bbae9842f6786e4f4008",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xafe6d1dcb1fd6751c45ef530aa4c296b11a611c6",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa5283897b615bb0bfcbbd72858b323e3751a6e5a",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xe2081b1f27c3c01575b94c4e6c0583f0d0eeb5e9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x47dee2791de281a64be0d1de5caddaa9b65266c6",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x57e5c019462a838ca7ee721389ad0f905393db18",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7d2d35cf256cb47b8caa6eb4d793f1c7e2228d35",
+      "token_a_decimals": 18,
+      "token_b": "0xfa42da1bd08341537a44a4ca9d236d1c00a98b40",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc368c51ad7dc69ab6f7cdc5a498d18d15edaf325",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7d2d35cf256cb47b8caa6eb4d793f1c7e2228d35",
+      "token_a_decimals": 18,
+      "token_b": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa52c7193e32ed4dbb85c2c9fc0b73c54a2a32780",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf67d80c073c1aa1c7d31a3115bbad8a7a7f71f42",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x5b7c2049123dd56bfa7d32ea77007a31d6b247e9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x74071e6d6d6a3a8716afbb1d3beaea49052b4232",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb99e865b5f6b5cee8d830e9a1a19d4e76bab2834",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xef8ef62896342c9c20627dbd2b5b86ad2a043dd1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xca4b6aca0f38907da99054f9c8aefd24f10b6521",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7fe4b7933ed12f5b2f31f617363155d7aff96ce8",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x685f7e1c92666f0b5bb5abee70d22d9fd73a7951",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x6c2bd626a2ec6c3c6905a7613fc5354d549a33b6",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x4ca0ed21df6a0aa0cd32bf583005c8f3649fd553",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x6bf16399356e1484e0e76e8487284fe6e934bdb8",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x735053e8bc6a34fa816d242a17c26c911f722676",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2707299fa7b0819d2734ccfc57c2737fcd931da2",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc1e4e50d5f7500d5915296cff37db53d4f9eb67e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xd4d42f0b6def4ce0383636770ef773390d85c61a",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x63d37a461a3080ccddccdcf172fe54da3115bc58",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2b0fe43dc51b05ef5d8bc49beb3a0a862b34888d",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xecd7a516d4544f99073b1eff1d5ba8a691430ec6",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3914d10b43cb45c2d847503b759fe4c912ffcfab",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xe4bac3147f219b53e34eceac7abdf07f1000f2df",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1639f151458889d57867df43b378e9ce5bc0aa5c",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x15bdf963df7a89c4aad904a937c5abcc6d51cc0f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x76785bbf024c72d3443ef82359081a859f281049",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0bd34cdc0c56c83bcdbe59959194136983848d60",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x47e567b495f5a16934be28651885d9fa60515cf0",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd2979cf0812e4a5aa68cc3e25da9e21b47932298",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb13e5d679964c674d2c3f2ec3f839c40ed1169ac",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x37be6dbeb4c932276b5fe314cd2fbdb3398edfe4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x8df81c2b8f6de4c84abe9ba92618d28560b9f87a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb437863d6c71d25b5c1973c71975e0547b9144b8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x5903ff6463a511fc923fb4f901f8a15184f40ae6",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8c2a5b037ec1d3ab6c8e21d094a208db8249b324",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x110d385becfa780c4a294c7f13f0c51843079d94",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xec3fb085bd0d0d6f93d8f1794836ce9ee8068e08",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x56938442e7a6913146152408d2eac981a66f46a4",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x45e6169b9fedc23a6e0f8694f9222b1d15d8646c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x4d221c3a5c10a74c377a5909658e2a639b6edb5c",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9b2763208dbb1d7fb975d1ac325f786317c9223f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x898e5c6f998f4db72a17f34914747b91748dbb9c",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcff9171a565a5e6f75b91b8c4d47ee58d2bf37a0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x31efa0ec18339845805cdf16dfb3a818f10e090f",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc97e3ff3660c3f2b422603fab25ba4ab5c1d185c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xc7d3591a9be5969cc40831bc2edb211360e58d65",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x365c34e39ceb90bcea01e431a75f88bad972dee8",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x155f0dd04424939368972f4e1838687d6a831151",
+      "token_a_decimals": 18,
+      "token_b": "0x2ae1ef41cd23e3e77f75789e9393d8951705470f",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8a15ba921e81f74413067a2ff55f1e0a0a7266a5",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x07031e84d26d90f6c2a7778c20ee6dee866f1163",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc38ab80d831aa57ee3a33f7cbcccee1370d537b7",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x76f88d52543b5eccf5bb77d24c07f539f05fd377",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x2d560f386219058825ef4a919ca353b5a5498a7f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x044d5f8cf43693d363068199241afc5d4d51df20",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xb08ca5b83a7a5845d35bc68de65977ec56c02acc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x07e41a0fed2abcd7e706b608302d42f2df75ca8b",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x1a840b7cd883324edd448b8003ce3a142d969fbc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1ebd1783937cb366bb24a13dce1aae807eff6953",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcb9e1c27ce6a9b8ba0a4c85a217c7549b06c3f44",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3f908f29e72cee8312988a57d484e36b116cac1a",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0715a91840020c8c6c4991b4a5272c3f7fafe8a6",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf843ec392f959129a458ca0d1f27e66c1c474458",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6a0518f0380ebace32a5ef3ca5428f7c2edfa1bc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x044d5f8cf43693d363068199241afc5d4d51df20",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x7af6cda336fd5714e2082596c0939e2a26c9f939",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa9c3013bd6b9b9765efe0cfcfa5243111ff71b17",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x58f10ce3ff6b8b4fec7531712717a0e4120292aa",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x83d2b599a1ca888ce21614853e9be21505bd591e",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x61f8d6ec65556b891c44ea29a66a6b06b07259bc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xe073428acd72ea1311220af6268281c5db4d08cd",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0xb6e7ae2fe045ce84c77ff0c6095f380fdf999b58",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x53d0aa0afc9449b82145a0a7a82dd2884d10366c",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xe505b510175f7c655909878859909ef5f21933f4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x53d0aa0afc9449b82145a0a7a82dd2884d10366c",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xdcb85d2c0c747153e008051a349871161ac6dbbb",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x35ee703b044cdc21df65c4d41ca1a40dbefeaf52",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6f576826c828f96a415a493e4b501ee65d27f3cf",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1c3f555cb4ea217f9c460f1c249d821db7e1caa3",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x4642d9f4a91efd230124c03398ccf5235ad3187d",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x48fa61be11821785863ba74a2f0a8d2d29294e61",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0d6bb0b80f32bc8199f3b8a07139ecebe3d88287",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xbbd6d9bd123cb74456031f730f33835f8df6f634",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xdf4c14d7863e4a482b57b56fdb2cab3fed7243ff",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x99c2fc7051b5bfb8ea70a2115043f0015ac23159",
+      "token_b_decimals": 9
+    },
+    {
+      "address": "0x8fc671b0a478a3be37fe3c0a3808b3381cdbe769",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xb7ed695247f1e6c579983ab5a18825216882c798",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xa9dc3eb9e659cff564fa801d1aa027fdd63d9454",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb7ed695247f1e6c579983ab5a18825216882c798",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x0fdd83dca104611a50973936a215b588c3ff3755",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xd1874620dbb0dad54edb44deba88c7abf73c6f1a",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xcee6ad7f95ccf6c8ac183b074ad348e6f2088743",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0xd1874620dbb0dad54edb44deba88c7abf73c6f1a",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x2c9a87368edba437ef6739f455b95addd9103946",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xdd15118ac1550dcc107d0d2843d49cdec04d525d",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa4c4b8673f27f56b327f26619a1053581a321156",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x4d221c3a5c10a74c377a5909658e2a639b6edb5c",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x5e7cfe1d2442859073d7206b0a97d4d622d5ca26",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xb8062cf540a0e199d1dbde385c63f0efb3dc6442",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xa0ed360b34ce13de038a5ccccff3e9a38981ec52",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x765111e034ff7ac1135f531157acbb9b62c5c358",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9e07d7f0e212241f435a906d2d8a3e43e8a930e9",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf57f2ccbb30c3c5ea982f21195df435d179d6b48",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x9cbd2370ded944f517475bca87c249f9145c5ccd",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x553b5e80d62a5d60702032604c034a78359c3256",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x514512f7c39a88d58cffdef50cacb253bdc38c38",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1122192572adaaed8dddcd810d961eceaba65d43",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x874e3c098eae510c85b13be85ceb864f6fb30ebf",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x36c9c8aba0daa86358a9ee6ff9f27c96b12fa644",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x66426afe91b0c88288dddf82febe98c19b6cf030",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xf0a71fa72d8de6b59a59e9521197e674ea18e5ba",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xea14b1b0c3449522408ea8942f1f32c9255ca8cc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x3a40c93e297a91d9732add8c1ff6d36aad5fa520",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd46f35db0a9f7cdd619a51dac24a7cdc68a9d194",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x1d2ed7eba253253be9dfa61dd272769d64f202ad",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd384c7e51437d0b44ac8419ab59d88b7e914298c",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7e435d80c2c75d58efd6f06938ace68f022af397",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0x90f0b57eec55dbf32da75d9eac31613a2940d1b0",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xa86cb87145d90fde867078367f1929d57dd26d04",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6280233244736b435eed1945d25877a27513899b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x60b238aa2912eadef4bffdee167bcba0369042c0",
+      "token_a_decimals": 9,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x20899cc3752c8ef24c138b2d70fedfa618d3c5e4",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x31efa0ec18339845805cdf16dfb3a818f10e090f",
+      "token_a_decimals": 18,
+      "token_b": "0xde31e75182276738b0c025daa8f80020a4f2fbfe",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x8a1ea523fb7ec94dc8dce4f7b5b5b1a014b5f91f",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x11eecdbd8f2d670016d061e4c064072e6158ede2",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xfd48c9e7e8fd9397d418d95d864b50e7e8672637",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x2ae1ef41cd23e3e77f75789e9393d8951705470f",
+      "token_a_decimals": 18,
+      "token_b": "0xed3fb761414da74b74f33e5c5a1f78104b188dfc",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x6d01824428c34c671d6011efe2624a42c0acd4bc",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x13d84e08a6848d3e24f24dab55cbd4e9f1d055d7",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xc61ac194b578ada87b51ac0c05e4948e4d9779f2",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x9320a9571252f6359fcd43eb4bd1395eb2101ce9",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0xd67908c73f8a260a2346bbc4c9b1f18e42912e0b",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x8eb69fd42da096bbc889648237a1d9b22d4601b7",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x2c52e1582f66e5098f2d248814a65396ca5e4bbf",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0x999e18d98008e96cb5830039a29acf47ad552505",
+      "token_b_decimals": 2
+    },
+    {
+      "address": "0xa0ecfb884569edf9c2f45ae919513f52931cbc07",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_a_decimals": 18,
+      "token_b": "0xbca061d4139d4242e4f46fcdb8bfe44810faba95",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x971812207a66b70fba01b2e204fa64f2f8d2c66e",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7bd97a4872acf273a479cee5b5a70800388390eb",
+      "token_a_decimals": 18,
+      "token_b": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+      "token_b_decimals": 18
+    },
+    {
+      "address": "0x558cc935bd21c7564b32187f179273a20659ca77",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x7bd97a4872acf273a479cee5b5a70800388390eb",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    },
+    {
+      "address": "0xd2824074da79af79677d4a64b2eb6b368af501fe",
+      "dex_variant": "UniswapV2",
+      "fee": 300,
+      "token_a": "0x0b7572869ad9822147285ac1af95b823c4725ec9",
+      "token_a_decimals": 18,
+      "token_b": "0xff970a61a04b1ca14834a43f5de4533ebddb5cc8",
+      "token_b_decimals": 6
+    }
+  ]
+}
