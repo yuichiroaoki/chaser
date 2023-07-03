@@ -5,7 +5,7 @@ pub use price::get_amount_out_from_path;
 
 use crate::utils::address_str;
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct PoolInfo {
     pub address: Address,
     pub token_in: Address,

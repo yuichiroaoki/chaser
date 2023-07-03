@@ -1,6 +1,7 @@
 use clap::{Parser, Subcommand};
 use std::error::Error;
 mod checkpoint;
+mod cli;
 mod config;
 mod import;
 mod sync;
@@ -51,6 +52,36 @@ enum Commands {
         #[clap(short, long, default_value = "default")]
         name: String,
     },
+    /// Show possible paths
+    Path {
+        #[clap(long)]
+        token_in: String,
+        #[clap(long)]
+        token_out: String,
+        #[clap(long, default_value = "1")]
+        hop: u64,
+        #[clap(short, long, default_value = "5")]
+        path_result_limit: u64,
+        /// Set configuration name
+        #[clap(short, long, default_value = "default")]
+        name: String,
+    },
+    /// Quote prices
+    Quote {
+        #[clap(long)]
+        token_in: String,
+        #[clap(long)]
+        token_out: String,
+        #[clap(short, long)]
+        amount_in: String,
+        #[clap(long, default_value = "1")]
+        hop: u64,
+        #[clap(short, long, default_value = "5")]
+        path_result_limit: u64,
+        /// Set configuration name
+        #[clap(short, long, default_value = "default")]
+        name: String,
+    },
 }
 
 #[tokio::main]
@@ -71,6 +102,31 @@ async fn main() -> Result<(), Box<dyn Error>> {
         }
         Commands::Sync { threads, name } => {
             sync::update_pool_states(threads, name).await?;
+        }
+        Commands::Path {
+            token_in,
+            token_out,
+            hop,
+            path_result_limit,
+            name,
+        } => cli::path::show_paths(token_in, token_out, hop, path_result_limit, name).await,
+        Commands::Quote {
+            token_in,
+            token_out,
+            amount_in,
+            hop,
+            path_result_limit,
+            name,
+        } => {
+            cli::path::show_best_prices(
+                token_in,
+                token_out,
+                hop,
+                path_result_limit,
+                amount_in,
+                name,
+            )
+            .await
         }
     }
 

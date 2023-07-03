@@ -11,6 +11,8 @@ use tracing::{info, warn};
 const REDIS_URL: &str = "redis://:testtest@127.0.0.1:30073/";
 const WETH_STR: &str = "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1";
 const USDC_STR: &str = "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8";
+const NEO4J_URI: &str = "bolt://localhost:7687";
+const NEO4J_USER: &str = "neo4j";
 
 #[tokio::test]
 async fn test_add_pool() {
@@ -20,9 +22,7 @@ async fn test_add_pool() {
     let redis_client = redis::Client::open(REDIS_URL).unwrap();
     let (_, pools, _) = checkpoint::deconstruct_checkpoint(&checkpoint_path);
     let chain_id = 42161;
-    let graph = Graph::new("127.0.0.1:7687", "neo4j", "testtest")
-        .await
-        .unwrap();
+    let graph = Graph::new(NEO4J_URI, NEO4J_USER, "testtest").await.unwrap();
 
     let total_pool_num = pools.len();
     let mut err_count = 0;
@@ -58,9 +58,7 @@ async fn test_add_pool() {
 #[tokio::test]
 async fn test_query_possible_path() {
     let start = Instant::now();
-    let graph = Graph::new("127.0.0.1:7687", "neo4j", "testtest")
-        .await
-        .unwrap();
+    let graph = Graph::new(NEO4J_URI, NEO4J_USER, "testtest").await.unwrap();
 
     let token_in: Address = WETH_STR.parse().unwrap();
     let token_out: Address = USDC_STR.parse().unwrap();
