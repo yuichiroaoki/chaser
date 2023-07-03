@@ -65,7 +65,7 @@ async fn test_query_possible_path() {
     let token_in: Address = WETH_STR.parse().unwrap();
     let token_out: Address = USDC_STR.parse().unwrap();
     let chain_id = 42161;
-    let routes = path::get_possible_paths(&graph, token_in, token_out, 1, 10, "Arb")
+    let routes = path::get_possible_paths(&graph, token_in, token_out, 2, 10, "Arb")
         .await
         .unwrap();
     println!(
