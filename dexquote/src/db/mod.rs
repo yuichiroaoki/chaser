@@ -4,7 +4,6 @@ use cfmms::pool::Pool;
 use ethers::types::Address;
 use neo4rs::Graph;
 use redis::RedisResult;
-use tracing::warn;
 
 use crate::{
     graph::{add_pool_to_neo4j, add_token_pair_to_neo4j},
@@ -117,7 +116,6 @@ pub fn get_pool(
     let dex = match target_data.get("dex") {
         Some(dex) => dex,
         None => {
-            warn!("No dex found for pool {}", address_str(pool_address));
             return Ok(None);
         }
     };

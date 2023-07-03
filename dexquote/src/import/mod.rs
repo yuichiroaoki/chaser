@@ -50,7 +50,7 @@ pub async fn import_pool(
         let pool_address = pool.address();
         let pool_on_redis = get_pool(&redis_client, chain_id, pool_address);
 
-        if let Err(_) = pool_on_redis {
+        if pool_on_redis.is_err() {
             err_count += 1;
             pb.inc(1);
             continue;

@@ -52,14 +52,9 @@ pub async fn add_token_pair_to_neo4j(graph: &Graph, token_label: &str, tokens: [
     }
 }
 
-pub async fn delete_pool(
-    graph: &Graph,
-    token_label: &str,
-    pool_address: Address,
-) {
-    let query_string = format!(
-        "MATCH (:{token_label})-[r:Pool {{address: $address}}]-(:{token_label}) DELETE r",
-    );
+pub async fn delete_pool(graph: &Graph, token_label: &str, pool_address: Address) {
+    let query_string =
+        format!("MATCH (:{token_label})-[r:Pool {{address: $address}}]-(:{token_label}) DELETE r",);
     let mut result = graph
         .execute(query(&query_string).param("address", address_str(pool_address)))
         .await

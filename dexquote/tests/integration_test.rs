@@ -1,10 +1,10 @@
+use std::sync::Arc;
 use std::time::Instant;
 
 use cfmms::checkpoint;
-use dexquote::db::add_pool;
 use dexquote::path;
+use dexquote::{constants::provider::get_provider, db::add_pool};
 use ethers::types::{Address, U256};
-use indicatif::{ProgressBar, ProgressStyle};
 use neo4rs::Graph;
 use tracing::{info, warn};
 
@@ -15,25 +15,30 @@ const NEO4J_URI: &str = "bolt://localhost:7687";
 const NEO4J_USER: &str = "neo4j";
 
 #[tokio::test]
-async fn test_add_pool() {
+async fn test_add_pool_with_sync() {
     let start = Instant::now();
 
+    let alchemy_api_key = std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
+    let json_rpc_url = format!(
+        "https://arb-mainnet.g.alchemy.com/v2/{}",
+        alchemy_api_key.as_str()
+    );
+    let provider = get_provider(&json_rpc_url).unwrap();
     let checkpoint_path = "fixtures/checkpoint.json";
     let redis_client = redis::Client::open(REDIS_URL).unwrap();
-    let (_, pools, _) = checkpoint::deconstruct_checkpoint(&checkpoint_path);
+    let (_, pools) = checkpoint::sync_pools_from_checkpoint_with_throttle(
+        &checkpoint_path,
+        100000,
+        5,
+        Arc::new(provider),
+    )
+    .await
+    .unwrap();
     let chain_id = 42161;
     let graph = Graph::new(NEO4J_URI, NEO4J_USER, "testtest").await.unwrap();
 
     let total_pool_num = pools.len();
     let mut err_count = 0;
-    let pb = ProgressBar::new(total_pool_num as u64);
-    pb.set_style(
-        ProgressStyle::default_bar()
-            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
-            .expect("Error when setting progress bar style")
-            .progress_chars("=> "),
-    );
-    pb.set_prefix("Importing");
     for pool in pools {
         match add_pool(&redis_client, chain_id, pool, &graph, "Arb").await {
             Ok(_) => {}
@@ -42,11 +47,9 @@ async fn test_add_pool() {
                 warn!("Error adding pool: {:?}", e);
             }
         };
-        pb.inc(1);
     }
 
     let elapsed = start.elapsed();
-    pb.finish_and_clear();
     info!(
         "Imported {} pools in {} seconds with {} errors",
         total_pool_num - err_count,
