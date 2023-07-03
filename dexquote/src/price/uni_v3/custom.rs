@@ -1,7 +1,9 @@
+use std::collections::HashMap;
+
 use super::tick_bitmap;
 use crate::constants::{sqrt_p::get_sqrt_price_limit_x96, tick_spacing::get_tick_spacing};
-use crate::db::univ3::get_pool;
 use crate::db::univ3::get_ticks_and_update_if_necessary;
+use crate::db::univ3::{get_pool, hashmap_to_univ3};
 use crate::types::DexQuoteResult;
 use cfmms::pool::Pool;
 use ethers::core::types::{Address, I256, U256};
@@ -89,8 +91,42 @@ impl PoolState {
         json_rpc_url: String,
         pool_address: Address,
     ) -> DexQuoteResult<Option<Self>> {
-        let redis_client = redis::Client::open(redis_url).unwrap();
+        let redis_client = redis::Client::open(redis_url)?;
         let pool_state = get_pool(&redis_client, chain_id, pool_address)?;
+        Self::from_pool_option(
+            pool_state,
+            redis_client,
+            chain_id,
+            json_rpc_url,
+            pool_address,
+        )
+    }
+
+    pub fn init_with_hashmap(
+        redis_url: &str,
+        chain_id: u64,
+        json_rpc_url: String,
+        pool_address: Address,
+        target_data: HashMap<String, String>,
+    ) -> DexQuoteResult<Option<Self>> {
+        let redis_client = redis::Client::open(redis_url)?;
+        let pool_state = hashmap_to_univ3(pool_address, target_data);
+        Self::from_pool_option(
+            pool_state,
+            redis_client,
+            chain_id,
+            json_rpc_url,
+            pool_address,
+        )
+    }
+
+    fn from_pool_option(
+        pool_state: Option<Pool>,
+        redis_client: redis::Client,
+        chain_id: u64,
+        json_rpc_url: String,
+        pool_address: Address,
+    ) -> DexQuoteResult<Option<Self>> {
         match pool_state {
             Some(Pool::UniswapV3(pool_state)) => {
                 let fee = pool_state.fee;

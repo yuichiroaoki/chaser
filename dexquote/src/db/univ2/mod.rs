@@ -17,7 +17,10 @@ pub fn get_pool(
     Ok(hashmap_to_univ2(pool_address, target_data))
 }
 
-fn hashmap_to_univ2(pool_address: Address, target_data: HashMap<String, String>) -> Option<Pool> {
+pub fn hashmap_to_univ2(
+    pool_address: Address,
+    target_data: HashMap<String, String>,
+) -> Option<Pool> {
     let fee = target_data.get("fee")?.parse().unwrap();
     let token_a = target_data.get("token0")?.parse().unwrap();
     let token_a_decimals = target_data.get("token0_decimals")?.parse().unwrap();

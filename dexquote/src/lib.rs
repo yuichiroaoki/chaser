@@ -1,8 +1,10 @@
 pub mod constants;
 pub mod db;
+pub mod dex;
 pub mod error;
 pub mod event;
 pub mod graph;
+pub mod path;
 pub mod price;
 pub mod types;
 pub mod utils;

@@ -54,8 +54,6 @@ jobs:
           - 7687:7687
         env:
           NEO4J_AUTH: "neo4j/testtest"
-          NEO4J_server.http.advertised_address: "localhost:7474"
-          NEO4J_server.bolt.advertised_address: "localhost:7687"
 
     steps:
       - name: Checkout sources

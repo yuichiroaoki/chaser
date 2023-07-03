@@ -4,6 +4,7 @@ use cfmms::pool::Pool;
 use ethers::types::Address;
 use neo4rs::Graph;
 use redis::RedisResult;
+use tracing::warn;
 
 use crate::{
     graph::{add_pool_to_neo4j, add_token_pair_to_neo4j},
@@ -108,12 +109,18 @@ pub fn get_pool(
     client: &redis::Client,
     chain_id: u64,
     pool_address: Address,
-) -> RedisResult<Option<Pool>> {
+) -> DexQuoteResult<Option<Pool>> {
     let mut con = client.get_connection()?;
     let key = get_pool_key(pool_address, chain_id);
     let target_data: HashMap<String, String> =
         redis::cmd("HGETALL").arg(key).query(&mut con).unwrap();
-    let dex = target_data.get("dex").unwrap();
+    let dex = match target_data.get("dex") {
+        Some(dex) => dex,
+        None => {
+            warn!("No dex found for pool {}", address_str(pool_address));
+            return Ok(None);
+        }
+    };
     match dex.as_str() {
         "UNIV3" => {
             let pool = univ3::get_pool(client, chain_id, pool_address)?;

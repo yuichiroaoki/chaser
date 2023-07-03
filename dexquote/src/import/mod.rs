@@ -37,6 +37,7 @@ pub async fn import_pool(
 
     let total_pool_num = pools.len();
     let mut err_count = 0;
+    let mut already_imported = 0;
     let pb = ProgressBar::new(total_pool_num as u64);
     pb.set_style(
         ProgressStyle::default_bar()
@@ -49,6 +50,8 @@ pub async fn import_pool(
         let pool_address = pool.address();
         let pool_on_redis = get_pool(&redis_client, chain_id, pool_address)?;
         if let Some(_pool_on_redis) = pool_on_redis {
+            already_imported += 1;
+            pb.inc(1);
             continue;
         };
         match add_pool(&redis_client, chain_id, pool, &graph, &conf.chain_label).await {
@@ -64,10 +67,12 @@ pub async fn import_pool(
     pb.finish_and_clear();
     let elapsed = start.elapsed();
     info!(
-        "Imported {} pools in {} seconds with {} errors",
-        total_pool_num - err_count,
+        total_pool_num,
+        already_imported,
+        err_count,
+        "Imported {} pools in {} seconds",
+        total_pool_num - err_count - already_imported,
         elapsed.as_secs(),
-        err_count
     );
 
     Ok(())

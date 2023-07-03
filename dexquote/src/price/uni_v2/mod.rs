@@ -1,5 +1,8 @@
-use crate::db::univ2::get_pool;
+use std::collections::HashMap;
+
+use crate::db::univ2::{get_pool, hashmap_to_univ2};
 use crate::error::DexQuoteError;
+use crate::types::DexQuoteResult;
 use cfmms::pool::Pool;
 use ethers::prelude::*;
 use ethers::types::U256;
@@ -13,7 +16,7 @@ pub fn get_price(
     pool_address: Address,
     token_in: Address,
     amount_in: U256,
-) -> Result<U256, DexQuoteError> {
+) -> DexQuoteResult<U256> {
     let redis_client = redis::Client::open(redis_url).unwrap();
     let pool_state = match get_pool(&redis_client, chain_id, pool_address) {
         Ok(pool_state) => match pool_state {
@@ -27,6 +30,19 @@ pub fn get_price(
         }
     };
     if let Pool::UniswapV2(pool) = pool_state {
+        return Ok(pool.simulate_swap(token_in, amount_in));
+    }
+    Err(DexQuoteError::PoolNotFound(pool_address))
+}
+
+pub fn get_price_with_hashmap(
+    pool_address: Address,
+    token_in: Address,
+    amount_in: U256,
+    target_data: HashMap<String, String>,
+) -> DexQuoteResult<U256> {
+    let pool_state = hashmap_to_univ2(pool_address, target_data);
+    if let Some(Pool::UniswapV2(pool)) = pool_state {
         return Ok(pool.simulate_swap(token_in, amount_in));
     }
     Err(DexQuoteError::PoolNotFound(pool_address))

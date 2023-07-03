@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use ethers::core::types::{Address, I256, U256};
 mod custom;
 pub use custom::*;
@@ -15,6 +17,42 @@ pub async fn get_price(
 ) -> DexQuoteResult<U256> {
     let pool_state = match custom::PoolState::init(redis_url, chain_id, json_rpc_url, pool_address)
     {
+        Ok(pool_state) => match pool_state {
+            Some(pool_state) => pool_state,
+            None => {
+                return Err(DexQuoteError::PoolNotFound(pool_address));
+            }
+        },
+        Err(e) => {
+            return Err(e);
+        }
+    };
+    let amoount_specified = I256::from_raw(amount_in);
+    let (amount_out, _, _, _) = match pool_state.get_price(amoount_specified, zero_for_one).await {
+        Ok(result) => result,
+        Err(e) => {
+            return Err(DexQuoteError::GetPriceError(e.to_string()));
+        }
+    };
+    Ok(amount_out)
+}
+
+pub async fn get_price_with_hashmap(
+    redis_url: &str,
+    chain_id: u64,
+    json_rpc_url: String,
+    pool_address: Address,
+    zero_for_one: bool,
+    amount_in: U256,
+    target_data: HashMap<String, String>,
+) -> DexQuoteResult<U256> {
+    let pool_state = match custom::PoolState::init_with_hashmap(
+        redis_url,
+        chain_id,
+        json_rpc_url,
+        pool_address,
+        target_data,
+    ) {
         Ok(pool_state) => match pool_state {
             Some(pool_state) => pool_state,
             None => {
