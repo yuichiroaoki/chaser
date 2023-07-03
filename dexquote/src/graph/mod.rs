@@ -9,7 +9,7 @@ pub async fn check_if_pool_already_exists(
     pool_address: Address,
 ) -> bool {
     let query_string = format!(
-        "MATCH (:{token_label})-[r {{address: $address}}]-(:{token_label})
+        "MATCH (:{token_label})-[r:Pool {{address: $address}}]-(:{token_label})
       RETURN r",
     );
     let mut result = graph
@@ -56,10 +56,9 @@ pub async fn delete_pool(
     graph: &Graph,
     token_label: &str,
     pool_address: Address,
-    protocol_label: &str,
 ) {
     let query_string = format!(
-        "MATCH (:{token_label})-[r:{protocol_label} {{address: $address}}]-(:{token_label}) DELETE r",
+        "MATCH (:{token_label})-[r:Pool {{address: $address}}]-(:{token_label}) DELETE r",
     );
     let mut result = graph
         .execute(query(&query_string).param("address", address_str(pool_address)))
@@ -85,7 +84,7 @@ pub async fn add_pool_to_neo4j(
     let query_string = format!(
         "MATCH (a:{token_label}), (b:{token_label})
 		WHERE a.address = $token0_address AND b.address = $token1_address 
-		CREATE (a)-[r {{ address: $address }}]->(b) 
+		CREATE (a)-[r:Pool {{ address: $address }}]->(b) 
 		RETURN r",
     );
     let mut result = graph

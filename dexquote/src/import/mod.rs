@@ -48,12 +48,20 @@ pub async fn import_pool(
     pb.set_prefix("Importing");
     for pool in pools {
         let pool_address = pool.address();
-        let pool_on_redis = get_pool(&redis_client, chain_id, pool_address)?;
-        if let Some(_pool_on_redis) = pool_on_redis {
+        let pool_on_redis = get_pool(&redis_client, chain_id, pool_address);
+
+        if let Err(_) = pool_on_redis {
+            err_count += 1;
+            pb.inc(1);
+            continue;
+        };
+
+        if let Ok(Some(_pool_on_redis)) = pool_on_redis {
             already_imported += 1;
             pb.inc(1);
             continue;
         };
+
         match add_pool(&redis_client, chain_id, pool, &graph, &conf.chain_label).await {
             Ok(_) => {}
             Err(e) => {
