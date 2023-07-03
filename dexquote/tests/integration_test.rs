@@ -6,7 +6,6 @@ use dexquote::path;
 use dexquote::{constants::provider::get_provider, db::add_pool};
 use ethers::types::{Address, U256};
 use neo4rs::Graph;
-use tracing::{info, warn};
 
 const REDIS_URL: &str = "redis://:testtest@127.0.0.1:30073/";
 const WETH_STR: &str = "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1";
@@ -44,13 +43,13 @@ async fn test_add_pool_with_sync() {
             Ok(_) => {}
             Err(e) => {
                 err_count += 1;
-                warn!("Error adding pool: {:?}", e);
+                println!("Error adding pool: {:?}", e);
             }
         };
     }
 
     let elapsed = start.elapsed();
-    info!(
+    println!(
         "Imported {} pools in {} seconds with {} errors",
         total_pool_num - err_count,
         elapsed.as_secs(),
@@ -69,7 +68,7 @@ async fn test_query_possible_path() {
     let routes = path::get_possible_paths(&graph, token_in, token_out, 1, 10, "Arb")
         .await
         .unwrap();
-    info!(
+    println!(
         "Queried possible paths in {} seconds",
         start.elapsed().as_secs()
     );

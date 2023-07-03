@@ -41,26 +41,21 @@ jobs:
           - 30073:6379
         env:
           REDIS_PASSWORD: testtest
-      neo4j:
-        image: neo4j
-        options: >-
-          --health-cmd "wget http://localhost:7474 || exit 1"
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-          --name neo4j
-        ports:
-          - 7474:7474
-          - 7687:7687
-        env:
-          NEO4J_AUTH: "neo4j/testtest"
 
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
+
+      - name: Start Neo4j
+        run: |
+          ./scripts/start-neo4j.sh
+      - name: Wait for Neo4j to start
+        run: wget -qO- https://raw.githubusercontent.com/eficode/wait-for/$WAIT_FOR_VERSION/wait-for | sh -s -- localhost:7474 -- echo "Database is up"
+        env:
+          WAIT_FOR_VERSION: 4df3f9262d84cab0039c07bf861045fbb3c20ab7 # v2.2.3
       - name: Set a token address constraint
         run: |
-          docker exec neo4j cypher-shell -u neo4j -p testtest "CREATE CONSTRAINT address_arb_constraint FOR (token:Arb) REQUIRE token.address IS UNIQUE"
+          docker exec neo4j-container cypher-shell -u neo4j -p testtest "CREATE CONSTRAINT address_arb_constraint FOR (token:Arb) REQUIRE token.address IS UNIQUE"
       - name: Run cargo test
         run: |
           make test
