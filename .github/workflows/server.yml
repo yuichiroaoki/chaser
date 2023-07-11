@@ -1,0 +1,53 @@
+name: server tests
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "server/src/**"
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "server/**"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./server
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+      - name: Run cargo check
+        run: | 
+          cargo check --all-features
+
+  lints:
+    name: Lints
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+      - name: Run cargo fmt 
+        run: |
+          make fmt
+
+      - name: Run cargo clippy
+        run: |
+          make clippy
+
+  lines:
+    name: Check source code lines
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+    - name: Install loc
+      run: cargo install loc
+    - name: Check lines
+      run: loc

@@ -14,7 +14,7 @@ const NEO4J_URI: &str = "bolt://localhost:7687";
 const NEO4J_USER: &str = "neo4j";
 
 #[tokio::test]
-async fn test_add_pool_with_sync() {
+async fn test_query_possible_path() {
     let start = Instant::now();
 
     let alchemy_api_key = std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
@@ -55,17 +55,10 @@ async fn test_add_pool_with_sync() {
         elapsed.as_secs(),
         err_count
     );
-}
-
-#[tokio::test]
-async fn test_query_possible_path() {
-    let start = Instant::now();
-    let graph = Graph::new(NEO4J_URI, NEO4J_USER, "testtest").await.unwrap();
 
     let token_in: Address = WETH_STR.parse().unwrap();
     let token_out: Address = USDC_STR.parse().unwrap();
-    let chain_id = 42161;
-    let routes = path::get_possible_paths(&graph, token_in, token_out, 1, 10, "Arb")
+    let routes = path::get_possible_paths(&graph, token_in, token_out, 2, 10, "Arb")
         .await
         .unwrap();
     println!(
@@ -74,11 +67,6 @@ async fn test_query_possible_path() {
     );
 
     assert_eq!(routes.len() > 0, true);
-    let alchemy_api_key = std::env::var("ALCHEMY_API_KEY").expect("Could not get ALCHEMY_API_KEY");
-    let json_rpc_url = format!(
-        "https://arb-mainnet.g.alchemy.com/v2/{}",
-        alchemy_api_key.as_str()
-    );
     let amount_in = U256::exp10(18);
     let estimated_amount_out =
         path::get_amount_out_from_path(REDIS_URL, chain_id, &json_rpc_url, amount_in, &routes[0])

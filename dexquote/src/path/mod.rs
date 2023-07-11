@@ -2,10 +2,11 @@ use ethers::types::Address;
 mod price;
 use neo4rs::{query, Graph, Path};
 pub use price::get_amount_out_from_path;
+use serde_derive::{Deserialize, Serialize};
 
 use crate::utils::address_str;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct PoolInfo {
     pub address: Address,
     pub token_in: Address,
