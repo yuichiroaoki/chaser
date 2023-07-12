@@ -1,19 +1,16 @@
-use cfmms::checkpoint;
-use dexquote::db::{add_pool, get_pool};
+use dexquote::{
+    db::{add_pool_from_subgraph, get_pool},
+    subgraph,
+};
 use ethers::providers::{Http, Middleware, Provider};
 use indicatif::{ProgressBar, ProgressStyle};
 use neo4rs::Graph;
 use std::{error::Error, sync::Arc, time::Instant};
 use tracing::{info, warn};
-pub mod univ3;
 
 use crate::config;
 
-pub async fn import_pool(
-    config_name: String,
-    checkpoint_path: String,
-    sync: bool,
-) -> Result<(), Box<dyn Error>> {
+pub async fn import_pool(config_name: String) -> Result<(), Box<dyn Error>> {
     let start = Instant::now();
     let conf = config::get_config(config_name);
     let graph = Graph::new(conf.neo4j_uri, "neo4j", conf.neo4j_pass).await?;
@@ -23,18 +20,7 @@ pub async fn import_pool(
     let provider = Arc::new(Provider::<Http>::try_from(&conf.json_rpc_url).unwrap());
     let chain_id = provider.get_chainid().await?.as_u64();
 
-    let pools;
-    if sync {
-        (_, pools) = checkpoint::sync_pools_from_checkpoint_with_throttle(
-            &checkpoint_path,
-            100000,
-            5,
-            provider,
-        )
-        .await?;
-    } else {
-        (_, pools, _) = checkpoint::deconstruct_checkpoint(&checkpoint_path);
-    }
+    let pools = subgraph::get_subgraph_poools(chain_id).await;
 
     let total_pool_num = pools.len();
     let mut err_count = 0;
@@ -48,8 +34,7 @@ pub async fn import_pool(
     );
     pb.set_prefix("Importing");
     for pool in pools {
-        let pool_address = pool.address();
-        let pool_on_redis = get_pool(&redis_client, chain_id, pool_address);
+        let pool_on_redis = get_pool(&redis_client, chain_id, pool.address);
 
         if pool_on_redis.is_err() {
             err_count += 1;
@@ -63,7 +48,8 @@ pub async fn import_pool(
             continue;
         };
 
-        match add_pool(&redis_client, chain_id, pool, &graph, &conf.chain_label).await {
+        match add_pool_from_subgraph(&redis_client, chain_id, pool, &graph, &conf.chain_label).await
+        {
             Ok(_) => {}
             Err(e) => {
                 err_count += 1;

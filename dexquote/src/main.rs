@@ -42,6 +42,12 @@ enum Commands {
         #[clap(short, long, default_value = "false")]
         sync: bool,
     },
+    /// Import univ3 pools from subgraph pools
+    ImportUniv3 {
+        /// Set configuration name
+        #[clap(short, long, default_value = "default")]
+        name: String,
+    },
     /// Update pool states
     Sync {
         /// Number of threads
@@ -99,6 +105,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
         }
         Commands::Import { name, path, sync } => {
             import::import_pool(name, path, sync).await?;
+        }
+        Commands::ImportUniv3 { name } => {
+            import::univ3::import_pool(name).await?;
         }
         Commands::Sync { threads, name } => {
             sync::update_pool_states(threads, name).await?;
