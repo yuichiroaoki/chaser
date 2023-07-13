@@ -16,6 +16,7 @@ pub fn id_to_network_name(chain_id: u64) -> &'static str {
     }
 }
 
+#[derive(Debug, Clone)]
 pub struct SubgraphPool {
     pub address: Address,
     pub token0: Address,
@@ -24,6 +25,12 @@ pub struct SubgraphPool {
     pub liquidity: u128,
     pub tvl_eth: f64,
     pub tvl_usd: f64,
+}
+
+impl SubgraphPool {
+    pub fn involves_token(&self, token: Address) -> bool {
+        self.token0 == token || self.token1 == token
+    }
 }
 
 #[derive(Deserialize, Debug)]
