@@ -7,6 +7,7 @@ use redis::RedisResult;
 
 use crate::{
     graph::{add_pool_to_neo4j, add_token_pair_to_neo4j},
+    subgraph::SubgraphPool,
     types::DexQuoteResult,
     utils::address_str,
 };
@@ -101,6 +102,22 @@ pub async fn add_pool(
     add_token_pair_to_neo4j(graph, chain_label, [token0, token1]).await;
 
     add_pool_to_neo4j(graph, chain_label, pool_address, token0, token1).await;
+    Ok(())
+}
+
+pub async fn add_pool_from_subgraph(
+    client: &redis::Client,
+    chain_id: u64,
+    pool: SubgraphPool,
+    graph: &Graph,
+    chain_label: &str,
+) -> DexQuoteResult<()> {
+    add_dex_pool(client, chain_id, "UNIV3", pool.address)?;
+    univ3::add_pool_from_subgraph(client, chain_id, &pool)?;
+
+    add_token_pair_to_neo4j(graph, chain_label, [pool.token0, pool.token1]).await;
+
+    add_pool_to_neo4j(graph, chain_label, pool.address, pool.token0, pool.token1).await;
     Ok(())
 }
 

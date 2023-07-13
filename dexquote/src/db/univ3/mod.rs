@@ -1,5 +1,8 @@
 use super::{get_pool_hashmap, get_pool_key};
-use crate::{constants::tick_spacing::get_tick_spacing, types::DexQuoteResult, utils::address_str};
+use crate::{
+    constants::tick_spacing::get_tick_spacing, subgraph::SubgraphPool, types::DexQuoteResult,
+    utils::address_str,
+};
 use cfmms::pool::{Pool, UniswapV3Pool};
 use ethers::{
     abi::{AbiDecode, AbiEncode},
@@ -112,6 +115,43 @@ pub fn add_pool(client: &redis::Client, chain_id: u64, pool: UniswapV3Pool) -> D
         .arg(tick_spacing)
         .arg("liquidity_net")
         .arg(pool.liquidity_net.to_string())
+        .arg("dex")
+        .arg("UNIV3")
+        .query(&mut con)?;
+    Ok(())
+}
+
+pub fn add_pool_from_subgraph(
+    client: &redis::Client,
+    chain_id: u64,
+    pool: &SubgraphPool,
+) -> DexQuoteResult<()> {
+    let mut con = client.get_connection()?;
+    let key = get_pool_key(pool.address, chain_id);
+    let tick_spacing = get_tick_spacing(pool.fee)?;
+    let fee = pool.fee;
+    redis::cmd("HSET")
+        .arg(key)
+        .arg("fee")
+        .arg(fee)
+        .arg("token0")
+        .arg(address_str(pool.token0))
+        .arg("token0_decimals")
+        .arg(0)
+        .arg("token1")
+        .arg(address_str(pool.token1))
+        .arg("token1_decimals")
+        .arg(0)
+        .arg("liquidity")
+        .arg(pool.liquidity.to_string())
+        .arg("sqrt_price")
+        .arg("0x0")
+        .arg("tick")
+        .arg(0)
+        .arg("tick_spacing")
+        .arg(tick_spacing)
+        .arg("liquidity_net")
+        .arg(0)
         .arg("dex")
         .arg("UNIV3")
         .query(&mut con)?;

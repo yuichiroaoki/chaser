@@ -6,5 +6,6 @@ pub mod event;
 pub mod graph;
 pub mod path;
 pub mod price;
+pub mod subgraph;
 pub mod types;
 pub mod utils;
