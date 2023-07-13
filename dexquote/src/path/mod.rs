@@ -183,9 +183,17 @@ mod tests {
             let token_out = route.token_out;
             assert_eq!(token_in, USDC_STR.parse().unwrap());
             assert_eq!(token_out, WETH_STR.parse().unwrap());
-            assert_eq!(route.pools.len() <= 2, true);
-            assert_eq!(route.pools[0].involves_token(token_in), true);
-            assert_eq!(route.pools[1].involves_token(token_out), true);
+            let hop = route.pools.len();
+            assert_eq!(hop <= 2, true);
+            if hop == 1 {
+                assert_eq!(route.pools[0].involves_token(token_in), true);
+                assert_eq!(route.pools[0].involves_token(token_out), true);
+            } else if hop == 2 {
+                assert_eq!(route.pools[0].involves_token(token_in), true);
+                assert_eq!(route.pools[1].involves_token(token_out), true);
+            } else {
+                panic!("hop should be less than 3");
+            }
         }
     }
 }
